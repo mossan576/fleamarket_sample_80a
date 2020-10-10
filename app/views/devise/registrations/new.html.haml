@@ -24,36 +24,38 @@
             .Input-box__input-form 本人確認
             .Input-box__field--text 
               安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-            .Input-box__input-form
-              .Input-box__input-form
-                = f.label :メールアドレス ,class: 'Input-box__input-form--title'
+            .Input-box__input-form.Flex
+              .Input-box__input-form--person
+                = f.label :お名前（全角） ,class: 'Input-box__input-form--title'
                 %br/
-                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  PC・携帯どちらでも可'
-              .Input-box__input-form
-                = f.label :メールアドレス ,class: 'Input-box__input-form--title'
+                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  例）山田'
+              .Input-box__input-form--space
+              .Input-box__input-form--person
                 %br/
-                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  PC・携帯どちらでも可'
-            .Input-box__input-form.flex
-              .Input-box__input-form
-                = f.label :メールアドレス ,class: 'Input-box__input-form--title'
+                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  例）彩'
+            .Input-box__input-form.Flex
+              .Input-box__input-form--person
+                = f.label :お名前カナ（全角） ,class: 'Input-box__input-form--title'
                 %br/
-                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  PC・携帯どちらでも可'
-              .Input-box__input-form
-                = f.label :メールアドレス ,class: 'Input-box__input-form--title'
+                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  例）ヤマダ'
+              .Input-box__input-form--space
+              .Input-box__input-form--person
                 %br/
-                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  PC・携帯どちらでも可'
-            .Input-box__input-form.flex
-              .Input-box__input-form
-                = f.label :メールアドレス ,class: 'Input-box__input-form--title'
+                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  例）アヤ'
+            .Input-box__input-form.Flex
+              .Input-box__input-form--person
+                = f.label :生年月日 ,class: 'Input-box__input-form--title'
                 %br/
-                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  PC・携帯どちらでも可'
-              .Input-box__input-form
-                = f.label :メールアドレス ,class: 'Input-box__input-form--title'
+                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  '
+              .Input-box__input-form--space 
+              .Input-box__input-form--person
                 %br/
-                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  PC・携帯どちらでも可'
-              .Input-box__input-form
-                = f.label :メールアドレス ,class: 'Input-box__input-form--title'
+                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  '
+              .Input-box__input-form--space 
+              .Input-box__input-form--person
                 %br/
-                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  PC・携帯どちらでも可'
+                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  '
+            .Input-box__field--text 
+              ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。            
             .actions
               = f.submit "登録する",class: 'Input-box__submit-btn'
