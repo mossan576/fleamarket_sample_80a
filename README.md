@@ -28,13 +28,13 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false|
+|nickname|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 |password|string|null: false|
 |family_name|string|null: false|
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
-|first_name_kana|string, null: false|
+|first_name_kana|string｜null: false|
 |birthday|integer|null: false|
 |postcode|integer|null: false|
 |prefecture|string|null: false|
@@ -42,23 +42,23 @@ Things you may want to cover:
 |block|integer|null: false|
 |building_name|string||
 |phone_number|integer||
-|credit-number|integer|null: false, unique: true|
+|credit_number|integer|null: false, unique: true|
 ### Association
  - has_many:products
 
 ## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|product_name|string|null: false|
-|product_description|text|null: false|
+|name|string|null: false|
+|description|text|null: false|
 |status|string|null: false|
 |freight|integer|null: false|
 |shipment_source|string|null: false|
 |ship_date|integer|null: false|
 |price|integer|null: false|
-|brand|string|
-|user_id|integer|null: false, foreign_key: true|
-|category_id|integer|null: false, foreign_key: true|
+|brand|string||
+|user_id|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
 ### Association
  - belongs_to :user
  - has_many :images
@@ -67,7 +67,7 @@ Things you may want to cover:
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|category|string|null; false|
+|name|string|null; false|
 ### Association
  - has_many :products
  - has_many :child_categories
@@ -75,17 +75,17 @@ Things you may want to cover:
 ## child_categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|child_category|string|null: false|
-|category_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
+|category_id|references|null: false, foreign_key: true|
 ### Association
- - belongs_to :product
+ - belongs_to :category
  - has_many :grandchild_categories
 
 ## grandchild_categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|grandchild_category|string|null: false|
-|child_category_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
+|child_category_id|references|null: false, foreign_key: true|
 ### Association
  - belongs_to :child_category
 
@@ -94,6 +94,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|product_id|integer|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 ### Association
- - belongs_to :child_category
+ - belongs_to :product
