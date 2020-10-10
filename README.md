@@ -35,16 +35,27 @@ Things you may want to cover:
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string｜null: false|
-|birthday|integer|null: false|
+|year|date|null: false|
+|month|date|null: false|
+|day|date|null: false|
 |postcode|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
 |block|integer|null: false|
 |building_name|string||
 |phone_number|integer||
-|credit_number|integer|null: false, unique: true|
 ### Association
- - has_many:products
+ - has_many :products
+ - has_one :credit_card
+
+## credit_cards
+|Column|Type|Options|
+|------|----|-------|
+|card_id|string|null: false, unique: true|
+|customer_id|string|null: false, unique: true|
+|user_id|references|null: false, foreign_key: true|
+### Association
+ - belongs_to :user
 
 ## productsテーブル
 |Column|Type|Options|
