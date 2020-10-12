@@ -1,13 +1,17 @@
-body {
-  background-color: #f5f5f5;
-}
-
 .Flex {
   display: flex;
 }
 
+.Base{
+  background-color: #f5f5f5;
+}
+
 .Center {
   justify-content: center;
+}
+
+.Container{
+  height: 100%;
 }
 
 .Header {
@@ -26,7 +30,6 @@ body {
   display: flex;
   justify-content: center;
   width: 700px;
-  height: 2150px;
   background-color: white;
 }
 
@@ -40,6 +43,32 @@ body {
     padding: 32px;
     height: 97px;
     font-weight: bold;
+  }
+
+  &__signup-area{
+    padding: 40px 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__text{
+    display: flex;
+    justify-content: center;
+  }
+
+  &__signup-btn{
+  margin: 8px 0 0;
+  border-radius: 4px;
+  border: 1px solid #3CCACE;
+  background: #3CCACE;
+  color: #fff;
+  width: 343px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   }
 
   &__field {
@@ -90,7 +119,8 @@ body {
     height: 50px;
     border: 1px solid #3CCACE;
     border-radius: 4px;
-    margin-top: 32px;
+    margin: 32px 0 24px;
+
   }
 }
 
