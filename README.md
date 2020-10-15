@@ -38,15 +38,23 @@ Things you may want to cover:
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
+|phone_number|integer||
+### Association
+ - has_many :products
+ - has_one :credit_card
+ - has_one :address
+
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
 |postcode|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
 |block|string|null: false|
 |building_name|string||
-|phone_number|integer||
+|user_id|references|null: false, foreign_key: true|
 ### Association
- - has_many :products
- - has_one :credit_card
+ - belongs_to :user
 
 ## credit_cards
 |Column|Type|Options|
@@ -78,28 +86,10 @@ Things you may want to cover:
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null; false|
+|name|string|null: false|
+|ancestry|string||
 ### Association
  - has_many :products
- - has_many :child_categories
-
-## child_categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|category_id|references|null: false, foreign_key: true|
-### Association
- - belongs_to :category
- - has_many :grandchild_categories
-
-## grandchild_categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|child_category_id|references|null: false, foreign_key: true|
-### Association
- - belongs_to :child_category
-
 
 ## imagesテーブル
 |Column|Type|Options|
