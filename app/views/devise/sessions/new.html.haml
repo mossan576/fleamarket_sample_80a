@@ -1,0 +1,25 @@
+.Flex.Center.Base
+  .Container
+    .Header
+      = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: 'logo'
+    .Main
+      .Input-box
+        .Input-box__signup-area
+          %h2.Input-box__text アカウントをお持ちでない方はこちら
+          = link_to new_user_registration_path,class: "Input-box__signup-btn" do
+            新規会員登録
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .Input-box__field
+            .Input-box__input-form
+              = f.label :メールアドレス ,class: 'Input-box__input-form--title'
+              %br/
+              = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  メールアドレス'
+            .Input-box__input-form
+              = f.label :パスワード ,class: 'Input-box__input-form--title'
+              %br/
+              = f.password_field :password, autocomplete: "current-password",class: 'Input-box__input-form--form', placeholder: '  パスワード'
+            .actions
+              = f.submit "ログイン",class: 'Input-box__submit-btn'
+    .Footer
+      = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: 'logo'
+      .Footer__text © FURIMA
