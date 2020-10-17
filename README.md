@@ -35,9 +35,7 @@ Things you may want to cover:
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|birth_year|integer|null: false|
-|birth_month|integer|null: false|
-|birth_day|integer|null: false|
+|birthday|date|null: false|
 ### Association
  - has_many :products
  - has_one :credit_card
@@ -50,12 +48,12 @@ Things you may want to cover:
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|postcode|integer|null: false|
+|postcode|string|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
 |block|string|null: false|
 |building_name|string||
-|phone_number|integer||
+|phone_number|string||
 |user_id|references|null: false, foreign_key: true|
 ### Association
  - belongs_to :user
