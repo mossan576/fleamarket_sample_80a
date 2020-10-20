@@ -78,7 +78,7 @@ Things you may want to cover:
 |ship_date|integer|null: false|
 |price|integer|null: false|
 |brand|string||
-|buyer_id|references|foreign_key:true
+|buyer_id|references|foreign_key:true|
 |user_id|references|null: false, foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
 ### Association
