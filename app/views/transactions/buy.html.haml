@@ -1,0 +1,70 @@
+.Flex.Center.Base
+  .Container
+    .Header
+      = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: 'logo'
+    .Main
+      .purchase-box
+        %h2.purchase-box__title 購入内容の確認
+        .purchase-box__item-flame
+          .detail
+            .detail__image
+              = image_tag "material/moyashi.jpeg", alt: "商品画像", class: 'item-image'
+            .detail__item
+              %h3.detail__item__name 商品名商品名商品名商品名商品名商品名商品名商品名あいうえお
+              .total-cost
+                .total-cost__price 送料込み(税込)
+                .total-cost__en ￥
+                .total-cost__sum 50.000
+        .purchase-box__payment
+          .payment-area
+            %h4.payment-area__title 支払い金額
+            .payment-area__total-cost
+              .payment-area__total-cost__en ￥
+              .payment-area__total-cost__sum 50.000
+        .purchase-box__payment-method
+          .credit-card
+
+            .credit-card__registration
+              %h5.credit-card__registration__title 支払い方法
+              = link_to new_user_registration_path do
+                変更する
+                = icon('fas', 'angle-right')
+            .credit-card__infometion
+              .credit-card__infometion__text クレジットカード
+              .credit-card__infometion__number *****************
+              .credit-card__infometion__expiration 有効期限 10/23
+              = icon('fab', 'cc-jcb')
+
+            -# .credit-card__before__registration
+            -#   %h5.credit-card__registration__title 支払い方法
+            -#   = link_to new_user_registration_path do
+            -#     = icon('fas', 'plus-circle')
+            -#     登録してください
+
+        .purchase-box__address
+          .current-address
+
+            .current-address__registration
+              %h6.delivery-address__registration__title 配送先
+              = link_to new_user_registration_path do
+                変更する
+                = icon('fas', 'angle-right')
+            .delivery-address
+              .delivery-address__postcode 〒123-4567
+              .delivery-address__text
+                大阪府大阪市中央区5丁目1-60
+              .delivery-address__name 山田 彩
+
+            -# .current-address__before-registration
+            -# %h6.current-address__before-registration__title 配送先
+            -# = link_to new_user_registration_path do
+            -#   = icon('fas', 'plus-circle')
+            -#   登録してください
+
+        .purchase-box__decision
+          .decision-area
+            = link_to root_path, class: "decision-area__btn" do
+              %button.decision-area__btn 購入する
+    .Footer
+      = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: 'logo'
+      .Footer__text © FURIMA 
