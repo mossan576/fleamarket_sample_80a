@@ -1,0 +1,23 @@
+.Flex.Center.Base
+  .Container
+    .Header
+      = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: 'logo'
+    .Main
+      .purchase-done
+        .purchase-done__item-flame
+          .detail-done
+            .detail-done__image
+              = image_tag "material/moyashi.jpeg", alt: "商品画像", class: 'done-item-image'
+            %p.detail-done__title 購入が完了しました！
+        .purchase-done__cost
+          .cost-done
+            .cost-done__price 送料込み(税込)
+            .cost-done__en ￥
+            .cost-done__sum 50.000
+        .purchase-done__decision
+          .decision-done
+            = link_to root_path, class: "decision-done__btn" do
+              %button.decision-done__btn トップページへ戻る
+    .Footer
+      = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: 'logo'
+      .Footer__text © FURIMA 

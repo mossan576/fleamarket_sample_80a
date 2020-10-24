@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   # after
   root 'items#index'
   get 'transactions/buy'
+  get 'transactions/done'
 end
