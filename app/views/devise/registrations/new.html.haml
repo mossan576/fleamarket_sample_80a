@@ -5,14 +5,14 @@
     .Main
       .Input-box
         %h2.Input-box__title 会員情報入力
-        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = form_with model: @user, url: user_registration_path, local: true do |f|
           = render "devise/shared/error_messages", resource: resource
           .Input-box__field
             .Input-box__input-form
               = f.label :ニックネーム ,class: 'Input-box__input-form--title'
               %span.Input-box__input-form--require 必須
               %br/
-              = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  例)フリマ太郎'
+              = f.text_field :nickname, autofocus: true, autocomplete: "nickname" ,class: 'Input-box__input-form--form', placeholder: '  例)フリマ太郎'
             .Input-box__input-form
               = f.label :メールアドレス ,class: 'Input-box__input-form--title'
               %span.Input-box__input-form--require 必須
@@ -38,79 +38,75 @@
               %span.Input-box__input-form--require 必須
               %br/
               .Input-box__input-form--person.Flex
-                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  例）山田'
+                = f.text_field :family_name, autofocus: true, autocomplete: "family_name" ,class: 'Input-box__input-form--form', placeholder: '  例）山田'
                 .Input-box__input-form--space
-                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  例）彩'
+                = f.text_field :first_name, autofocus: true, autocomplete: "first_name" ,class: 'Input-box__input-form--form', placeholder: '  例）彩'
 
             .Input-box__input-form
               = f.label :お名前カナ（全角） ,class: 'Input-box__input-form--title'
               %span.Input-box__input-form--require 必須
               %br/
               .Input-box__input-form--person.Flex
-                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  例）ヤマダ'
+                = f.text_field :family_name_kana, autofocus: true, autocomplete: "family_name_kana" ,class: 'Input-box__input-form--form', placeholder: '  例）ヤマダ'
                 .Input-box__input-form--space
-                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  例）アヤ'
+                = f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" ,class: 'Input-box__input-form--form', placeholder: '  例）アヤ'
             
             .Input-box__input-form
               = f.label :生年月日 ,class: 'Input-box__input-form--title'
               %span.Input-box__input-form--require 必須
               %br/
               .Input-box__input-form--person.Flex
-                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  例）2020'
-                .Input-box__input-form--space 年
-                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  例）06'
-                .Input-box__input-form--space 月
-                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  例）20'
-                .Input-box__input-form--space 日
+                != sprintf(f.date_select(:birthday, with_css_classes:'XXXXX', prompt:"--", use_month_numbers:true, start_year:1930, end_year:Time.now.year - 10, default: Date.new(1990, 1, 1), date_separator:'%s'),'年','月')+'日'
 
             .Input-box__field--text 
               ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
             .Input-box__input-title 商品送付先住所
 
-            .Input-box__input-form
-              = f.label :送付先氏名（全角） ,class: 'Input-box__input-form--title'
-              %span.Input-box__input-form--require 必須
-              %br/
-              .Input-box__input-form--person.Flex
-                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  例）山田'
-                .Input-box__input-form--space
-                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  例）彩'
-            .Input-box__input-form
-              = f.label :送付先氏名カナ（全角） ,class: 'Input-box__input-form--title'
-              %span.Input-box__input-form--require 必須
-              %br/
-              .Input-box__input-form--person.Flex
-                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  例）ヤマダ'
-                .Input-box__input-form--space
-                = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'Input-box__input-form--form', placeholder: '  例）アヤ'
-            .Input-box__input-form
-              = f.label :郵便番号 ,class: 'Input-box__input-form--title'
-              %span.Input-box__input-form--require 必須
-              %br/
-              = f.password_field :password, autocomplete: "new-password",class: 'Input-box__input-form--form', placeholder: '  例）5420076'
-            .Input-box__input-form
-              = f.label :都道府県 ,class: 'Input-box__input-form--title'
-              %span.Input-box__input-form--require 必須
-              %br/
-              = f.password_field :password, autocomplete: "new-password",class: 'Input-box__input-form--form', placeholder: '  例）大阪府'
-            .Input-box__input-form
-              = f.label :市区町村 ,class: 'Input-box__input-form--title'
-              %span.Input-box__input-form--require 必須
-              %br/
-              = f.password_field :password, autocomplete: "new-password",class: 'Input-box__input-form--form', placeholder: '  例）大阪市'
-            .Input-box__input-form
-              = f.label :番地 ,class: 'Input-box__input-form--title'
-              %span.Input-box__input-form--require 必須
-              %br/
-              = f.password_field :password, autocomplete: "new-password",class: 'Input-box__input-form--form', placeholder: '  例）中央区5丁目1-60'
-            .Input-box__input-form
-              = f.label :マンション名やビル名、部屋番号 ,class: 'Input-box__input-form--title'
-              %br/
-              = f.password_field :password, autocomplete: "new-password",class: 'Input-box__input-form--form', placeholder: '  例）なんばスカイオ15階'
-            .Input-box__input-form
-              = f.label :お届け先の電話番号 ,class: 'Input-box__input-form--title'
-              %br/
-              = f.password_field :password, autocomplete: "new-password",class: 'Input-box__input-form--form', placeholder: '  例）05031873522'
+            = f.fields_for :address, Address.new do |i|
+              .Input-box__input-form
+                = i.label :送付先氏名（全角） ,class: 'Input-box__input-form--title'
+                %span.Input-box__input-form--require 必須
+                %br/
+                .Input-box__input-form--person.Flex
+                  = i.text_field :family_name, autofocus: true, autocomplete: "family_name" ,class: 'Input-box__input-form--form', placeholder: '  例）山田'
+                  .Input-box__input-form--space
+                  = i.text_field :first_name, autofocus: true, autocomplete: "first_name" ,class: 'Input-box__input-form--form', placeholder: '  例）彩'
+              .Input-box__input-form
+                = i.label :送付先氏名カナ（全角） ,class: 'Input-box__input-form--title'
+                %span.Input-box__input-form--require 必須
+                %br/
+                .Input-box__input-form--person.Flex
+                  = i.text_field :family_name_kana, autofocus: true, autocomplete: "family_name_kana" ,class: 'Input-box__input-form--form', placeholder: '  例）ヤマダ'
+                  .Input-box__input-form--space
+                  = i.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" ,class: 'Input-box__input-form--form', placeholder: '  例）アヤ'
+              .Input-box__input-form
+                = i.label :郵便番号 ,class: 'Input-box__input-form--title'
+                %span.Input-box__input-form--require 必須
+                %br/
+                = i.text_field :postcode, autocomplete: "postcode",class: 'Input-box__input-form--form', placeholder: '  例）5420076'
+              .Input-box__input-form
+                = i.label :都道府県 ,class: 'Input-box__input-form--title'
+                %span.Input-box__input-form--require 必須
+                %br/
+                = i.text_field :prefecture, autocomplete: "prefecture",class: 'Input-box__input-form--form', placeholder: '  例）大阪府'
+              .Input-box__input-form
+                = i.label :市区町村 ,class: 'Input-box__input-form--title'
+                %span.Input-box__input-form--require 必須
+                %br/
+                = i.text_field :city, autocomplete: "city",class: 'Input-box__input-form--form', placeholder: '  例）大阪市中央区'
+              .Input-box__input-form
+                = i.label :番地 ,class: 'Input-box__input-form--title'
+                %span.Input-box__input-form--require 必須
+                %br/
+                = i.text_field :block, autocomplete: "block",class: 'Input-box__input-form--form', placeholder: '  例）5丁目1-60'
+              .Input-box__input-form
+                = i.label :マンション名やビル名、部屋番号 ,class: 'Input-box__input-form--title'
+                %br/
+                = i.text_field :building_name, autocomplete: "building_name",class: 'Input-box__input-form--form', placeholder: '  例）なんばスカイオ15階'
+              .Input-box__input-form
+                = i.label :お届け先の電話番号 ,class: 'Input-box__input-form--title'
+                %br/
+                = i.text_field :phone_number, autocomplete: "phone_number",class: 'Input-box__input-form--form', placeholder: '  例）05031873522'
             .actions
               = f.submit "登録する",class: 'Input-box__submit-btn'
     .Footer
