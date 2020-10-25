@@ -1,0 +1,40 @@
+.Flex.Center.Base
+  .Card-Container
+    .Header
+      = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: 'logo'
+    .Card-main
+      .Input-box
+        %h2.Input-box__title クレジットカード情報入力
+        = form_with url: card_new_path do |f|
+          .Input-box__field
+            .Input-box__input-form
+              = f.label :カード番号 ,class: 'Input-box__input-form--title'
+              %span.Input-box__input-form--require 必須
+              %br/
+              = f.text_field :number, class: 'Input-box__input-form--form', placeholder: '  半角数字のみ', maxlength:"16"
+            .Input-box__card-image
+              = image_tag "material/logo/visa-logo.png", alt: "visa", class: 'card-logo'
+              = image_tag "material/logo/mastercard-logo.png", alt: "mastercard", class: 'card-logo'
+              = image_tag "material/logo/amex-logo.gif", alt: "amex", class: 'card-logo'
+              = image_tag "material/logo/jcb-logo.gif", alt: "jcb", class: 'card-logo'
+              = image_tag "material/logo/dinersclub-logo.png", alt: "dinersclub", class: 'card-logo'
+              = image_tag "material/logo/discover_logo.jpg", alt: "discover", class: 'card-logo'
+            .Input-box__input-form
+              = f.label :有効期限 ,class: 'Input-box__input-form--title'
+              %span.Input-box__input-form--require 必須
+              %br/
+              .Input-box__input-form--efective-date
+                = f.select :manth_number, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9", 9], ["10", 10], ["11", 11], ["12", 12]], {}, class: 'Input-box__input-form--pulldown'
+                %span 月
+                = f.select :year_number, [["20", 20], ["21", 21], ["22",22], ["23", 23], ["24", 24], ["25", 25], ["26", 26], ["27", 27], ["28", 28], ["29", 29], ["30", 30]], {}, class: 'Input-box__input-form--pulldown'
+                %span 年
+              .Input-box__input-form
+              = f.label :セキュリティコード ,class: 'Input-box__input-form--title'
+              %span.Input-box__input-form--require 必須
+              %br/
+              = f.text_field :number, class: 'Input-box__input-form--form', placeholder: '  カード裏面4桁もしくは3桁の番号', maxlength:"4"
+            .actions
+              = f.submit "登録する",class: 'Input-box__submit-btn'
+    .Footer
+      = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: 'logo'
+      .Footer__text © FURIMA

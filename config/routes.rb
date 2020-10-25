@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'card/new'
   devise_for :users
   # before
   get 'items/index'
@@ -6,4 +7,5 @@ Rails.application.routes.draw do
   # after
   root 'items#index'
   resources:users, only: [:show, :edit]
+  resources:card, only: :new
 end
