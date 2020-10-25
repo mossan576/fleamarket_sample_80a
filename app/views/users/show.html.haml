@@ -1,0 +1,40 @@
+.show-container
+  -# = render 'header'
+  .show-header
+    header
+  .category
+    category
+  .show-main
+    .sidebar
+      .menu
+        %h2.menu__title マイページメニュー
+        .menu__list
+          %ul
+            = link_to "#", class:"menu__list--btn" do
+              %li お知らせ
+      .menu
+        %h2.menu__title 商品を出品・購入
+        .menu__list
+          %ul
+            = link_to "#", class:"menu__list--btn" do
+              %li 商品を出品する
+            = link_to "#", class:"menu__list--btn" do
+              %li 購入した商品
+      .menu
+        %h2.menu__title 設定・その他
+        .menu__list
+          %ul
+            = link_to "#", class:"menu__list--btn" do
+              %li 設定
+            = link_to card_new_path, class:"menu__list--btn" do
+              %li クレジットカード登録・変更
+            = link_to edit_user_path , class:"menu__list--btn" do
+              %li ログアウト
+    .content
+      .content__title
+        重要なお知らせ
+      .content__detail
+        住所の設定をしましょう！
+  -# = render 'footer'
+  .show-footer
+    footer
