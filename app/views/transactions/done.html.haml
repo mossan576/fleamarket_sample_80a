@@ -4,17 +4,19 @@
       = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: 'logo'
     .Main
       .purchase-done
-        .purchase-done__item-flame
+        .purchase-done__item-frame
           .detail-done
             .detail-done__image
-              = image_tag "material/moyashi.jpeg", alt: "商品画像", class: 'done-item-image'
+              = image_tag "material/item/moyashi.jpeg", alt: "商品画像", class: 'done-item-image'
             %p.detail-done__title 購入が完了しました！
-        .purchase-done__cost
+        .purchase-done__name-frame
+          .title-done 商品名商品名商品名商品名商品名商品名商品名商品名あいうえお
+        .purchase-done__cos-frame
           .cost-done
             .cost-done__price 送料込み(税込)
-            .cost-done__en ￥
+            .cost-done__yen ￥
             .cost-done__sum 50.000
-        .purchase-done__decision
+        .purchase-done__decision-frame
           .decision-done
             = link_to root_path, class: "decision-done__btn" do
               %button.decision-done__btn トップページへ戻る

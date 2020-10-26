@@ -1,8 +1,9 @@
 class TransactionsController < ApplicationController
-  def edit
+  
+  def buy
   end
 
-  def buy
+  def done
   end
 
 end

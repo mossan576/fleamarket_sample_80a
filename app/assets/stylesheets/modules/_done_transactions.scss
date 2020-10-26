@@ -1,4 +1,5 @@
 .purchase-done {
+  width: 400px;
   margin-top: 50px;
   &__item-flame {
     margin: 0 auto;
@@ -36,17 +37,24 @@ p {
   background-color: #3ccace;
 }
 
+.title-done {
+  padding: 8px 16px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
 .done-item-image {
   height: 400px;
   width: 400px;
 }
 
 .cost-done {
+  padding-right: 16px;;
   display: flex;
   float: right;
-  margin: 14px 0 20px 0;
+  margin: 10px 0 20px;
   font-size: 18px;
-  &__en {
+  &__yen {
     font-weight: bold;
   }
   &__sum {
@@ -69,7 +77,7 @@ p {
     font-weight: bold;
     background-color: #ccc;
     color: #888;
-    transition: .1s;
+    transition: .2s;
   }
 }
 
