@@ -24,22 +24,22 @@
         .purchase-box__payment-method
           .credit-card
             -# ~~~~~~~~以下カード登録後のビュー ~~~~~~~~~~~~~~~
-            -# .credit-card__registration
-            -#   %h5.credit-card__registration__title 支払い方法
-            -#   = link_to new_user_registration_path do
-            -#     変更する
-            -#     = icon('fas', 'angle-right')
-            -# .credit-card__infometion
-            -#   .credit-card__infometion__text クレジットカード
-            -#   .credit-card__infometion__number ************1234
-            -#   .credit-card__infometion__expiration 有効期限 10/23
-            -#   = image_tag "material/logo_visa.png", alt: "カードロゴ", class: 'card-logo'
-            -# ~~~~~~~~以下カード登録前のビュー ~~~~~~~~~~~~~~~
-            .credit-card__before-registration
-              %h5.credit-card__before-registration__title 支払い方法
+            .credit-card__registration
+              %h5.credit-card__registration__title 支払い方法
               = link_to new_user_registration_path do
-                = icon('fas', 'plus-circle')
-                登録してください
+                変更する
+                = icon('fas', 'angle-right')
+            .credit-card__infometion
+              .credit-card__infometion__text クレジットカード
+              .credit-card__infometion__number ************1234
+              .credit-card__infometion__expiration 有効期限 10/23
+              = image_tag "material/logo_visa.png", alt: "カードロゴ", class: 'card-logo'
+            -# ~~~~~~~~以下5行 カード登録前のビュー ~~~~~~~~~~~~~~~
+            -# .credit-card__before-registration
+            -#   %h5.credit-card__before-registration__title 支払い方法
+            -#   = link_to new_user_registration_path do
+            -#     = icon('fas', 'plus-circle')
+            -#     登録してください
         .purchase-box__address
           .current-address
             .current-address__registration
