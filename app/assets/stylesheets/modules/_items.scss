@@ -10,3 +10,60 @@
   text-decoration: none;
 }
 
+  .parentHeader {
+    padding: 0 60px;
+  }
+  .headerInner {
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+  }
+  .middleHeader {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .icon {
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    a {
+      width: 140px;
+      display: block;
+    }
+    .furimaLogo {
+      width: 100%;
+      vertical-align: bottom;
+    }
+  }
+    .TextBox {
+      margin-left: auto;
+      width: 100%;
+      &__form {
+        width: 100%;
+        display: flex;
+        margin-bottom: 5px;
+      }
+      .content, .input {
+        width: calc(100% - 26px);
+        height: 36px;
+        padding: 0 0 0 5px;
+      }
+    }
+        %button {
+          width: 36px;
+          border: 0;
+          cursor: pointer;
+          background-color: #3ccace;
+          padding: 8px;
+          &__icon {
+            margin: 0;
+            padding: 0;
+          }
+        }
+        　.glassesLogo {
+            width: 100%;
+            vertical-align: bottom;
+          }

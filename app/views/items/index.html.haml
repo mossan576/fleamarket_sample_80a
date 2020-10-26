@@ -1,4 +1,14 @@
-= link_to new_user_session_path,class: "signin-btn" do
-  ログイン
-= link_to new_user_registration_path,class: "signup-btn" do
-  新規会員登録
+%header.parentHeader
+  .headerInner
+    .middleHeader
+      %h1.icon
+        = link_to "#" do
+          = image_tag 'material/logo/logo.png', class: "furimaLogo", alt: "ロゴ"
+      .TextBox
+        %form{action: "#", "accept-charset": "UTF-8", class: "TextBox__form", method: "get"}
+          %input.content{ name: 'utf8', type: 'hidden', value: '/'}
+          %input#textInput.input{"name": "key", "placeholder": "キーワードから探す"}
+          %button{"type": "submit"}
+            .TextBox__icon
+              = image_tag 'material/icon/icon-search 1.png', class: "glassesLogo", alt: "虫眼鏡"
+          %input
