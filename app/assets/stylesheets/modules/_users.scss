@@ -147,15 +147,57 @@
 }
 
 .show-header{
-  height: 150px;
-  background-color: gray;
-  line-height: 150px;
-}
-
-.category{
-  height: 50px;
-  line-height: 50px;
-  border-bottom: 1px solid #cccccc;
+  height: 130px;
+  padding-top: 20px;
+  padding-right: 100px;
+  background-color: #FFF;
+  border-bottom: 1px solid #eee;
+  &__top{
+    line-height: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  &__logo{
+    margin-right: 40px;
+  }
+  &__index{
+    display: flex;
+    .index-form{
+      .search-input{
+        width: 50vw;
+        height: 34px;
+      }
+    }
+    .index-btn{
+      width: 34px;
+      height: 34px;
+      margin-top: 9px;
+      background-color: #3CCACE;
+      position: relative;
+      border: none;
+    }
+    .search-logo{
+      height: 20px;
+      width: auto;
+      position: absolute; top: 7px; left: 7px;
+    }
+  }
+  &__menu{
+    font-size: 14px;
+    display: flex;
+    justify-content: space-around;
+    &--left{
+      width: 180px;
+      display: flex;
+      justify-content: space-between;
+      
+    }
+    &--right{
+      width: 180px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }
 
 .show-main{
@@ -166,7 +208,7 @@
 .sidebar{
   width: 300px;
   margin-right:50px;
-  margin-left: 250px;
+  margin-left: 15vw;
 }
 
 .menu{
@@ -196,9 +238,9 @@ li{
 }
 
 .content{
-  width: calc(100% - 300px);
+  width: 42vw;
   border: 1px solid #cccccc;
-  margin: 63px 250px 100px 50px;
+  margin: 63px 15vw 100px 0;
   text-align: left;
   &__title{
     border-bottom: 1px solid #cccccc;

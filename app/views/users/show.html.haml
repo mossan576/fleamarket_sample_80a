@@ -1,9 +1,26 @@
 .show-container
   -# = render 'header'
   .show-header
-    header
-  .category
-    category
+    .show-header__top
+      .show-header__logo
+        = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: 'logo'
+      .show-header__index
+        .index-form
+          = form_with url: items_index_path, local: true do |f|
+            = f.text_field :keyword, placeholder:"キーワードから探す", class: "search-input"
+        %button.index-btn
+          = image_tag "material/icon/icon-search 1.png", alt: "フリマロゴ", class: 'search-logo'
+    .show-header__menu
+      .show-header__menu--left
+        = link_to "#", class:"menu__list--btn" do
+          カテゴリ
+        = link_to "#", class:"menu__list--btn" do
+          ブランド
+      .show-header__menu--right
+        = link_to new_user_session_path, class:"menu__list--btn" do
+          ログイン
+        = link_to new_user_registration_path, class:"menu__list--btn" do
+          新規会員登録
   .show-main
     .sidebar
       .menu
