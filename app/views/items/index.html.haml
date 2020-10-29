@@ -5,10 +5,73 @@
         = link_to "#" do
           = image_tag 'material/logo/logo.png', class: "furimaLogo", alt: "ロゴ"
       .TextBox
-        %form{action: "#", "accept-charset": "UTF-8", class: "TextBox__form", method: "get"}
+        %form_with{action: "#", "accept-charset": "UTF-8", class: "TextBox__form", method: "get"}
           %input.content{ name: 'utf8', type: 'hidden', value: '/'}
           %input#textInput.input{"name": "key", "placeholder": "キーワードから探す"}
-          %button{"type": "submit"}
+          %button.button{"type": "submit"}
             .TextBox__icon
               = image_tag 'material/icon/icon-search 1.png', class: "glassesLogo", alt: "虫眼鏡"
-          %input
+
+.main
+  %section.mainView
+    .maincontent
+      %h2.maincontent__subtitle
+        %br
+          人生を変えるフリマアプリ
+      %p.maincontent__text
+        FURIMAはだれでも簡単に出品・購入できる
+        %brフリマアプリです
+      .maincontent__btn
+        = link_to "#", class: "aMain" do
+          = image_tag 'material/pict/bn_app_store.png', class: "appPict", alt: "リンゴ"
+        = link_to "#", class: "bMain" do
+          = image_tag 'material/pict/google-play-badge .png', class: "googlePict", alt: "グーグル"
+  %section.topReason
+    %h2.subMenu
+      FURIMAが選ばれる３つの理由
+    %ul.contents
+      %li.content
+        .contentPict
+          %span.number
+            1
+          = image_tag 'material/pict/pict-reason-01.jpg', class: "listingPict", alt: "出品"
+        %h3.contentText
+          %span 3分
+          ですぐに出品
+        %p.contentManner
+          スマホで入力するだけですぐに出品できる！
+      %li.content
+        .contentPict
+          %span.number
+            2
+          = image_tag 'material/pict/pict-reason-02.jpg', class: "listingPict", alt: "シンプル"
+        %h3.contentText
+          %span シンプル
+          で使いやすい
+        %p.contentManner
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.content
+        .contentPict
+          %span.number
+            3
+          = image_tag 'material/pict/pict-reason-03.jpg', class: "listingPict", alt: "手数料"
+        %h3.contentText
+          手数料
+          %span業界最安
+        %p.contentManner
+          最大3％でお得に出品＆購入！
+    %section.thirdMenu
+      .thirdMenu__inner
+        %h2.subManner
+          会員数日本一位
+        %p.text
+          FURIMAは、フリマアプリで最も人気。
+          %br
+          出品・購入も業界最多です！
+          %br
+          ほしかったあの商品に出会えるかもしれません。
+        .btn
+          = link_to "#", class: "aMain" do
+            = image_tag 'material/pict/bn_app_store.png', class: "appPict", alt: "リンゴ"
+          = link_to "#", class: "bMain" do
+            = image_tag 'material/pict/google-play-badge .png', class: "googlePict", alt: "グーグル"
