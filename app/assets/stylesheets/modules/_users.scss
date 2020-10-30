@@ -276,7 +276,7 @@
     font-size: 24px;
     font-weight: bold;
     position: absolute;
-    top: 60px;
+    top: 100px;
     left: 0;
     right: 0;
     margin: auto;
@@ -285,6 +285,24 @@
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
       margin: 10px 0;
     }
+  }
+  .AppStore-logo{
+    height: auto;
+    width: 180px;
+    position: absolute;
+    top: 195px;
+    left: 0;
+    right: 210px;
+    margin: auto;
+  }
+  .googleplay-logo{
+    height: auto;
+    width: 230px;
+    position: absolute;
+    top: 180px;
+    left: 210px;
+    right: 0;
+    margin: auto;
   }
   &__contents{
     padding-top: 60px;

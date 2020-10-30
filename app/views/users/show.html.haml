@@ -54,10 +54,14 @@
         住所の設定をしましょう！
   .footer
     .footer__image
-      = image_tag "material/pict/bg-appBanner-pict.jpg", alt: "フリマロゴ", class:"footer__image"
+      = image_tag "material/pict/bg-appBanner-pict.jpg", alt: "footer-image", class:"footer__image"
       .footer__message
         %p だれでもかんたん、人生を変えるフリマアプリ
         %h2 今すぐ無料ダウンロード！
+      = link_to "#", class:"footer__btn" do
+        = image_tag "material/logo/App_Store_Badge_US.svg", alt: "AppStore", class:"AppStore-logo"
+      = link_to "#", class:"footer__btn" do
+        = image_tag "https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png", alt: "googleplay", class:"googleplay-logo"
     %ul.footer__contents
       %li.footer__contents--left
         %h2 FURIMAについて
