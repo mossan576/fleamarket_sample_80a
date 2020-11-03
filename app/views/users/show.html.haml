@@ -1,26 +1,5 @@
 .show-container
-  .show-header
-    .show-header__top
-      .show-header__logo
-        = link_to "/", class:"root__btn" do
-          = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: 'logo'
-      .show-header__index
-        .index-form
-          = form_with url: items_index_path, local: true do |f|
-            = f.text_field :keyword, placeholder:"キーワードから探す", class: "search-input"
-        %button.index-btn
-          = image_tag "material/icon/icon-search 1.png", alt: "フリマロゴ", class: 'search-logo'
-    .show-header__menu
-      .show-header__menu--left
-        = link_to "#", class:"menu__list--btn" do
-          カテゴリ
-        = link_to "#", class:"menu__list--btn" do
-          ブランド
-      .show-header__menu--right
-        = link_to new_user_session_path, class:"menu__list--btn" do
-          ログイン
-        = link_to new_user_registration_path, class:"menu__list--btn" do
-          新規会員登録
+  = render "items/header"
   .show-main
     .sidebar
       .menu
@@ -52,56 +31,7 @@
         重要なお知らせ
       .content__detail
         住所の設定をしましょう！
-  .footer
-    .footer__image
-      = image_tag "material/pict/bg-appBanner-pict.jpg", alt: "footer-image", class:"footer__image"
-      .footer__message
-        だれでもかんたん、人生を変えるフリマアプリ
-        %h2 今すぐ無料ダウンロード！
-      = link_to "#", class:"footer__btn" do
-        = image_tag "material/logo/App_Store_Badge_US.svg", alt: "AppStore", class:"AppStore-logo"
-      = link_to "#", class:"footer__btn" do
-        = image_tag "https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png", alt: "googleplay", class:"googleplay-logo"
-    %ul.footer__contents
-      %li.footer__contents--left
-        %h2 FURIMAについて
-        %ul.footer__content
-          %li
-            = link_to "#", class:"footer__btn" do
-              会社概要（運営会社）
-          %li
-            = link_to "#", class:"footer__btn" do
-              プライバシーポリシー
-          %li
-            = link_to "#", class:"footer__btn" do
-              FURIMA利用規約
-          %li
-            = link_to "#", class:"footer__btn" do
-              ポイントに関する特約
-      %li.footer__contents--center 
-        %h2 FURIMAを見る
-        %ul.footer__content
-          %li
-            = link_to "#", class:"footer__btn" do
-              カテゴリー一覧
-          %li
-            = link_to "#", class:"footer__btn" do
-              ブランド一覧
-      %li.footer__contents--right
-        %h2 ヘルプ＆ガイド
-        %ul.footer__content
-          %li
-            = link_to "#", class:"footer__btn" do
-              FURIMAガイド
-          %li
-            = link_to "#", class:"footer__btn" do
-              FURIMAロゴ利用ガイドライン
-          %li
-            = link_to "#", class:"footer__btn" do
-              お知らせ
-    = link_to "/", class:"root__btn" do
-      = image_tag "material/logo/logo-white.png", alt: "フリマロゴ", class: 'logo'
-    ©︎FURIMA
+  = render "items/footer"
   = link_to "#" do
     .putup-btn
       %span 出品する
