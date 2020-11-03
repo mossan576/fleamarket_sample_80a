@@ -1,0 +1,22 @@
+.header
+  .header__top
+    .header__logo
+      = link_to "/", class:"root__btn" do
+        = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: 'logo'
+    .header__index
+      .index-form
+        = form_with url: items_index_path, local: true do |f|
+          = f.text_field :keyword, placeholder:"キーワードから探す", class: "search-input"
+      %button.index-btn
+        = image_tag "material/icon/icon-search 1.png", alt: "フリマロゴ", class: 'search-logo'
+  .header__menu
+    .header__menu--left
+      = link_to "#", class:"menu__list--btn" do
+        カテゴリ
+      = link_to "#", class:"menu__list--btn" do
+        ブランド
+    .header__menu--right
+      = link_to new_user_session_path, class:"menu__list--btn" do
+        ログイン
+      = link_to new_user_registration_path, class:"menu__list--btn" do
+        新規会員登録

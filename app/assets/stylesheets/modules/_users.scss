@@ -147,7 +147,7 @@
   position: relative;
 }
 
-.show-header{
+.header{
   height: 130px;
   padding-top: 20px;
   background-color: #fff;
@@ -307,7 +307,7 @@
   &__contents{
     padding-top: 60px;
     width: 50vw;
-    height: 200px;
+    height: 230px;
     display: flex;
     justify-content: space-around;
     h2{
@@ -321,12 +321,14 @@
       width: 170px;
     }
   }
-  p{
-    height: 20px;
-  }
   &__btn{
     color: #fff;
     text-decoration: none;
+  }
+  .footer-logo{
+    height: 49px;
+    width: auto;
+    display: block;
   }
 }
 
