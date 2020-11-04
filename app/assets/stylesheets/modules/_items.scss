@@ -10,6 +10,61 @@
   text-decoration: none;
 }
 
+.header{
+  height: 130px;
+  padding-top: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  &__top{
+    line-height: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  &__logo{
+    margin-right: 40px;
+  }
+  &__index{
+    display: flex;
+    .index-form{
+      .search-input{
+        width: 50vw;
+        height: 34px;
+        padding-left: 5px;
+      }
+    }
+    .index-btn{
+      width: 34px;
+      height: 34px;
+      margin-top: 9px;
+      background-color: #3CCACE;
+      position: relative;
+      border: none;
+    }
+    .search-logo{
+      height: 20px;
+      width: auto;
+      position: absolute; top: 7px; left: 7px;
+    }
+  }
+  &__menu{
+    font-size: 14px;
+    display: flex;
+    justify-content: space-around;
+    &--left,  &--right {
+      width: 180px;
+      display: flex;
+      justify-content: space-between;
+      
+    }
+    &--right{
+      width: 180px;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+  }
+}
+
   .parentHeader {
     padding: 0 60px;
   }
@@ -66,13 +121,6 @@
             vertical-align: bottom;
           }
 
-    @mixin mainvisual {
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      font-size: 60px;
-      line-height: 1.2;
-      color: #fff;
-    }
-
   .main {
     background: #f8f8f8; 
   }
@@ -94,7 +142,10 @@
     margin: 0 auto;
     padding: 35px 0 0 0;
     &__subtitle {
-      @include mainvisual;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-size: 60px;
+      line-height: 1.2;
+      color: #fff;
       br {
         box-sizing: border-box;
       }
@@ -111,9 +162,6 @@
         margin: 24px 0 0 0;
         justify-content: flex-start;
         align-items: center;
-        .aMain {
-          //margin-right: 10px;
-        }
           .appPict {
             height: 60px;
             vertical-align: bottom;
@@ -130,12 +178,12 @@
       }
   }
   .topReason {
-    padding: 60px 0;
+    padding: 60px 20px;
   }
     .subMenu {
       text-align: center;
-      font-size: 26px;
-      // line-height: 1,4;
+      font-size: 23px;
+      line-height: 1,4;
       font-weight: bold;
       margin-bottom: 25px;
       padding-bottom: 15px;
@@ -203,7 +251,7 @@
       }
     .thirdMenu {
       background-image: url('material/pict/bg-topMiddleDl-pict.jpg');
-      background-position: bottom-right;
+      background-position: bottom right;
       height: 400px;
       background-size: cover;
       display: flex;
@@ -256,7 +304,7 @@
       background-color: #fff;
     }
     .center {
-      font-size: 27px;
+      font-size: 25px;
       text-align: center;
       margin: 0 0 40px;
       font-weight: bold;
@@ -307,11 +355,7 @@
         font-weight: 200;
         text-align: left;
       }
-        .woman {
-          width: 100%;
-          vertical-align: bottom;
-        }
-        .card {
+        .woman, .card {
           width: 100%;
           vertical-align: bottom;
         }
@@ -324,7 +368,7 @@
     }
      .top {
        text-align: center;
-       font-size: 28px;
+       font-size: 27px;
        line-height: 1.4;
        font-weight: bold;
      }
@@ -356,6 +400,7 @@
       a {
         background-color: #fff;
         display: inline-block;
+        text-decoration: none;
       }
     }
     .newList--image {
@@ -403,6 +448,79 @@
         }
       }
 
+    }
+    .footer{
+      color: #fff;
+      background-color: #272727;
+      padding-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &__image{
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        position: relative;
+      }
+      &__message{
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        font-size: 24px;
+        font-weight: bold;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        h2{
+          font-size: 35px;
+          text-shadow: 0 0 5px rgba(0,0,0,0.4);
+          margin: 10px 0;
+        }
+      }
+      .AppStore-logo{
+        height: auto;
+        width: 180px;
+        position: absolute;
+        top: 195px;
+        left: 0;
+        right: 210px;
+        margin: auto;
+      }
+      .googleplay-logo{
+        height: auto;
+        width: 230px;
+        position: absolute;
+        top: 180px;
+        left: 210px;
+        right: 0;
+        margin: auto;
+      }
+      &__contents{
+        padding-top: 60px;
+        width: 50vw;
+        height: 230px;
+        display: flex;
+        justify-content: space-around;
+        h2{
+          height: 50px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        li{
+          font-size: 12px;
+          height: 30px;
+          width: 170px;
+        }
+      }
+      &__btn{
+        color: #fff;
+        text-decoration: none;
+      }
+      .footer-logo{
+        height: 49px;
+        width: auto;
+        display: block;
+      }
     }
 
   
