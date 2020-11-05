@@ -37,7 +37,7 @@ Things you may want to cover:
 |first_name_kana|string|null: false|
 |birthday|date|null: false|
 ### Association
- - has_many :products
+ - has_many :items
  - has_one :credit_card
  - has_one :address
 
@@ -67,7 +67,7 @@ Things you may want to cover:
 ### Association
  - belongs_to :user
 
-## productsテーブル
+## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -78,6 +78,7 @@ Things you may want to cover:
 |ship_date|integer|null: false|
 |price|integer|null: false|
 |brand|string||
+|buyer_id|references|foreign_key:true|
 |user_id|references|null: false, foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
 ### Association
@@ -91,12 +92,12 @@ Things you may want to cover:
 |name|string|null: false|
 |ancestry|string||
 ### Association
- - has_many :products
+ - has_many :items
 
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|product_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 ### Association
- - belongs_to :product
+ - belongs_to :item
