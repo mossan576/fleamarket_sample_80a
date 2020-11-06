@@ -26,7 +26,7 @@
       %h2.maincontent__subtitle
         %br
           人生を変えるフリマアプリ
-      %p.maincontent__text
+      .priceFurima.maincontent__text
         FURIMAはだれでも簡単に出品・購入できる
         %brフリマアプリです
       .maincontent__btn
@@ -37,8 +37,8 @@
   %section.topReason
     %h2.subMenu
       FURIMAが選ばれる３つの理由
-    %ul.contents
-      %li.content
+    .contents
+      .secondContent
         .contentPict
           %span.number
             1
@@ -46,9 +46,9 @@
         %h3.contentText
           %span 3分
           ですぐに出品
-        %p.contentManner
+        .priceFurima.contentManner
           スマホで入力するだけですぐに出品できる！
-      %li.content
+      .secondContent
         .contentPict
           %span.number
             2
@@ -56,9 +56,9 @@
         %h3.contentText
           %span シンプル
           で使いやすい
-        %p.contentManner
+        .priceFurima.contentManner
           めんどくさい入力は必要なく、検索も購入もスムーズ！
-      %li.content
+      .secondContent
         .contentPict
           %span.number
             3
@@ -66,13 +66,13 @@
         %h3.contentText
           手数料
           %span業界最安
-        %p.contentManner
+        .priceFurima.contentManner
           最大3％でお得に出品＆購入！
   %section.thirdMenu
     .thirdMenu__inner
       %h2.subManner
         会員数日本一位
-      %p.text
+      .priceFurima.text
         FURIMAは、フリマアプリで最も人気。
         %br
         出品・購入も業界最多です！
@@ -87,38 +87,38 @@
     %h2.center
       FURIMAの特徴
     .menus
-      %section.menu
-        %figure.menu__image
+      %section.childMenu
+        %figure.furimaImage
           = image_tag 'material/icon/icon-01.png', class: "men", alt: "男性"
         %h3.menu__subtitle
           簡単に売り買いできる
-        %p.menu__detail
+        .priceFurima.menu__detail
           スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
-      %section.menu
-        %figure.menu__image
+      %section.childMenu
+        %figure.furimaImage
           = image_tag 'material/icon/icon-03.png', class: "woman", alt: "女性"
         %h3.menu__subtitle
           売上金は即日振り込みに対応
-        %p.menu__detail
+        .priceFurima.menu__detail
           午前9時までに振り込みを依頼いただければ、翌日に指定の口座に入金いたします！
-      %section.menu
-        %figure.menu__image
+      %section.childMenu
+        %figure.furimaImage
           = image_tag 'material/icon/icon-04.png', class: "card", alt: "カード"
         %h3.menu__subtitle
           様々な支払いに対応
-        %p.menu__detail
+        .priceFurima.menu__detail
           お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
   %section.picupContents
     %h2.top
       ピックアップカテゴリー
     .newBox
       .newTop
-        = link_to "#" do
+        = link_to "#", class: "newPost" do
           %h3.title
             新規投稿商品
       .newLists
         .newList
-          = link_to "#" do
+          = link_to "#", class: "beef" do
             %figure.newList--image
               = image_tag 'material/item/beef.jpg', class: "meat", alt: "肉"
             .newList--body
@@ -126,15 +126,15 @@
                 ローストビーフ
               .details
                 %ul
-                  %li
+                  %li.foodPrice
                     1129円
-                  %li
+                  %li.star
                     %i.fas.fa-star
                       29
-                %p
+                .priceFurima
                   (税込）
         .newList
-          = link_to "#" do
+          = link_to "#", class: "beef" do
             %figure.newList--image
               = image_tag 'material/item/IMG_9072.jpg', class: "meat", alt: "肉"
             .newList--body
@@ -142,15 +142,15 @@
                 もやし
               .details
                 %ul
-                  %li
+                  %li.foodPrice
                     5円
-                  %li
+                  %li.star
                     %i.fas.fa-star
                       84
-                %p
+                .priceFurima
                   (税込）
         .newList
-          = link_to "#" do
+          = link_to "#", class: "beef" do
             %figure.newList--image
               = image_tag 'material/item/a007.png', class: "meat", alt: "肉"
             .newList--body
@@ -158,15 +158,15 @@
                 魚
               .details
                 %ul
-                  %li
+                  %li.foodPrice
                     非売品
-                  %li
+                  %li.star
                     %i.fas.fa-star
                       0
-                %p
+                .priceFurima
                   (税込)
         .newList
-          = link_to "#" do
+          = link_to "#", class: "beef" do
             %figure.newList--image
               = image_tag 'material/item/a004.png', class: "meat", alt: "肉"
             .newList--body
@@ -174,15 +174,15 @@
                 棒棒鶏
               .details
                 %ul
-                  %li
+                  %li.foodPrice
                     580円
-                  %li
+                  %li.star
                     %i.fas.fa-star
                       ５８０
-                %p
+                .priceFurima
                   (税込)
         .newList
-          = link_to "#" do
+          = link_to "#", class: "beef" do
             %figure.newList--image
               = image_tag 'material/item/a001.png', class: "meat", alt: "肉"
             .newList--body
@@ -190,40 +190,40 @@
                 カレー
               .details
                 %ul
-                  %li
+                  %li.foodPrice
                     777円
-                  %li
+                  %li.star
                     %i.fas.fa-star
                       100
-                %p
+                .priceFurima
                   (税込）
   %section.picupContents
     %h2.top
       ピックアップブランド
     .newBox
       .newTop
-        = link_to "#" do
+        = link_to "#", class: "brand" do
           %h3.title
             アーカイバ
       .newLists
         .newList
-          = link_to "#" do
+          = link_to "#", class: "beef" do
             %figure.newList--image
               = image_tag 'material/item/beef.jpg', class: "meat", alt: "肉"
             .newList--body
               %h3.name
                 ローストビーフ
-              .details  
+              .details
                 %ul
-                  %li
+                  %li.foodPrice
                     1129円
-                  %li
+                  %li.star
                     %i.fas.fa-star
                       29
-                %p
+                .priceFurima
                   (税込）
         .newList
-          = link_to "#" do
+          = link_to "#", class: "beef" do
             %figure.newList--image
               = image_tag 'material/item/IMG_9072.jpg', class: "meat", alt: "肉"
             .newList--body
@@ -231,15 +231,15 @@
                 もやし
               .details
                 %ul
-                  %li
+                  %li.foodPrice
                     5円
-                  %li
+                  %li.star
                     %i.fas.fa-star
                       84
-                %p
+                .priceFurima
                   (税込）
         .newList
-          = link_to "#" do
+          = link_to "#", class: "beef" do
             %figure.newList--image
               = image_tag 'material/item/a007.png', class: "meat", alt: "肉"
             .newList--body
@@ -247,15 +247,15 @@
                 魚
               .details
                 %ul
-                  %li
+                  %li.foodPrice
                     非売品
-                  %li
+                  %li.star
                     %i.fas.fa-star
                       0
-                %p
+                .priceFurima
                   (税込)
         .newList
-          = link_to "#" do
+          = link_to "#", class: "beef" do
             %figure.newList--image
               = image_tag 'material/item/a004.png', class: "meat", alt: "肉"
             .newList--body
@@ -263,15 +263,15 @@
                 棒棒鶏
               .details
                 %ul
-                  %li
+                  %li.foodPrice
                     580円
-                  %li
+                  %li.star
                     %i.fas.fa-star
                       580
-                %p
+                .priceFurima
                   (税込)
         .newList
-          = link_to "#" do
+          = link_to "#", class: "beef" do
             %figure.newList--image
               = image_tag 'material/item/a001.png', class: "meat", alt: "肉"
             .newList--body
@@ -279,12 +279,12 @@
                 カレー
               .details
                 %ul
-                  %li
+                  %li.foodPrice
                     777円
-                  %li
+                  %li.star
                     %i.fas.fa-star
                       100
-                %p
+                .priceFurima
                   (税込）
 
   .footer
