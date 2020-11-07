@@ -9,3 +9,480 @@
 .signin-btn{
   text-decoration: none;
 }
+
+.header{
+  height: 130px;
+  padding-top: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  &__top{
+    line-height: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  &__logo{
+    margin-right: 40px;
+  }
+  &__index{
+    display: flex;
+    .index-form{
+      .search-input{
+        width: 50vw;
+        height: 34px;
+        padding-left: 5px;
+      }
+    }
+    .index-btn{
+      width: 34px;
+      height: 34px;
+      margin-top: 9px;
+      background-color: #3CCACE;
+      position: relative;
+      border: none;
+    }
+    .search-logo{
+      height: 20px;
+      width: auto;
+      position: absolute; top: 7px; left: 7px;
+    }
+    
+  }
+  &__menu{
+    font-size: 14px;
+    display: flex;
+    justify-content: space-around;
+    &--left,  &--right {
+      width: 180px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .beef {
+      text-decoration: none;
+      color: black;
+    }
+    &--right{
+      width: 180px;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+  }
+}
+  }
+  .main {
+    background: #f8f8f8; 
+  }
+  .mainView {
+    width: 100%;
+    height: 560px;
+    background-image: url("material/pict/bg-mainVisual-pict_pc.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top-center;
+    position: relative;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+  }
+  .maincontent {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 35px 0 0 0;
+    &__subtitle {
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-size: 60px;
+      line-height: 1.2;
+      color: #fff;
+      br {
+        box-sizing: border-box;
+      }
+    }
+    &__text {
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-size: 18px;
+      line-height: 1.7778;
+      color: #fff;
+      margin: 16px 0 0 0;
+    }
+      &__btn {
+        display: flex;
+        margin: 24px 0 0 0;
+        justify-content: flex-start;
+        align-items: center;
+          .appPict {
+            height: 60px;
+            vertical-align: bottom;
+            margin: 0 auto;
+          }
+        .bMain {
+          width: 180px;
+        }
+          .googlePict {
+            height: 85px;
+            vertical-align: bottom;
+            margin: 0 auto;
+          }
+      }
+  }
+  .topReason {
+    padding: 60px 20px;
+  }
+    .subMenu {
+      text-align: center;
+      font-size: 23px;
+      line-height: 1,4;
+      font-weight: bold;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      position: relative;
+    }
+    .subMenu::after {
+      content: "";
+      width: 70px;
+      height: 4px;
+      background-color: #3ccace;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .contents {
+      text-align: center;
+      display: flex;
+      max-width: 1020px;
+      width: 100%;
+      margin: 0 auto;
+    }
+      .secondContent {
+        width: 30%;
+        margin: 16px 5% 0 0;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .contentPict {
+        position: relative;
+        margin-bottom: 20px;
+        .number {
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 4%;
+          font-size: 30px;
+          text-align: center;
+          margin: 0 5px 0 0;
+          padding: 10px 20px;
+          background-color: #3ccace;
+          color: #fff;
+        }
+        .listingPict {
+          width: 100%;
+          vertical-align: bottom;
+        }
+      }
+      .contentText {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 50px;
+        margin: 0 0 0 2px;
+        span {
+          color: #3ccace;
+        }
+      }
+      .contentManner {
+        font-size: 18px;
+        line-height: 1.5;
+        margin: 16px 0 0;
+      }
+    .thirdMenu {
+      background-image: url('material/pict/bg-topMiddleDl-pict.jpg');
+      background-position: bottom right;
+      height: 400px;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      &__inner {
+        color: #fff;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        text-align: left;
+        max-width: 1040px;
+        width: 100%;
+        margin: 0 auto;
+        .subManner {
+          font-size: 27px;
+          font-weight: bold;
+          line-height: 1.4;
+        }
+      }
+        .text {
+          font-size: 18px;
+          margin: 20px 0 30px;
+          line-height: 1.5; 
+        }
+        .btn {
+          display: flex;
+          margin: 24px 0 0 0;
+          justify-content: flex-start;
+          align-items: center;
+            .appPict {
+              height: 60px;
+              vertical-align: bottom;
+              margin: 0 auto;
+            }
+          }
+          .bMain {
+            width: 180px;
+            .googlePict {
+              height: 85px;
+              vertical-align: bottom;
+              margin: 0 auto;
+            }
+          }
+          
+        }
+      
+    .furimaFuture {
+      padding: 60px 100px;
+      background-color: #fff;
+    }
+    .center {
+      font-size: 25px;
+      text-align: center;
+      margin: 0 0 40px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      position: relative;
+    }
+    .center::after {
+      content: "";
+      width: 70px;
+      height: 4px;
+      background-color: #3ccace;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .menus {
+      max-width: calc(1040px + 20px);
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .childMenu {
+      display: flex;
+      flex-direction: column;
+      width: calc(1 / 3 * 100%);
+      text-align: center;
+      padding: 0 20px;
+      .furimaImage {
+        width: 70%;
+        margin: 0 auto;
+        line-height: 120px;
+        .men {
+          width: 100%;
+          vertical-align: bottom;
+        }
+      }
+      &__subtitle {
+        margin: 38px 0 10px;
+        font-size: 19px;
+        font-weight: bold;
+      }
+      &__detail {
+        margin: 0 0 40px;
+        font-size: 17px;
+        font-weight: 200;
+        text-align: left;
+      }
+        .woman, .card{
+          width: 100%;
+          vertical-align: bottom;
+        }
+        
+    }
+    .picupContents {
+      padding: 80px 0 80px 0;
+      background-color: #f8f8f8;
+      height: 100%;
+    }
+     .top {
+       text-align: center;
+       font-size: 27px;
+       line-height: 1.4;
+       font-weight: bold;
+     }
+    .newBox {
+      margin: 0;
+      padding: 0;
+    }
+    .newTop {
+      text-align: center;
+      .newPost {
+        font-size: 24px;
+        text-decoration: none;
+        color: #3ccace;
+      } 
+      .title {
+        font-weight: bold;
+      }
+    }
+    .newLists {
+     width: 780px;
+     margin: 26px auto;
+     display: flex;
+     justify-content: space-around;
+    }
+    .newList {
+      width: 220px;
+      display: inline-block;
+      float: left;
+      .beef {
+        background-color: #fff;
+        display: inline-block;
+        text-decoration: none;
+      }
+    }
+    .newList--image {
+      width: 220px;
+      height: 150px;
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      z-index: auto;
+      .meat {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: auto;
+        height: 150px;
+        object-fit: cover;
+      }
+    }
+    .newList--body {
+      background-color: white;
+      color: #333;
+      padding: 16px;
+      .name {
+        overflow: hidden;
+        line-height: 1.5;
+        font-size: 16px;
+        text-align: left;
+      }
+      .details {
+        font-size: 16px;
+        ul {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        i::before {
+          content: "\f005";
+        }
+        .priceFurima {
+          font-size: 10px;
+          text-align: left;
+        }
+      }
+
+    }
+    .footer{
+      color: #fff;
+      background-color: #272727;
+      padding-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &__image{
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        position: relative;
+        text-align: center;
+      }
+      &__message{
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        font-size: 24px;
+        font-weight: bold;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        h2{
+          font-size: 35px;
+          text-shadow: 0 0 5px rgba(0,0,0,0.4);
+          margin: 10px 0;
+        }
+      }
+      .AppStore-logo{
+        height: auto;
+        width: 180px;
+        position: absolute;
+        top: 195px;
+        left: 0;
+        right: 210px;
+        margin: auto;
+      }
+      .googleplay-logo{
+        height: auto;
+        width: 230px;
+        position: absolute;
+        top: 180px;
+        left: 210px;
+        right: 0;
+        margin: auto;
+      }
+      &__contents{
+        padding-top: 60px;
+        width: 50vw;
+        height: 230px;
+        display: flex;
+        justify-content: space-around;
+        h2 {
+          height: 50px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        .content {
+          font-size: 12px;
+          height: 30px;
+          width: 170px;
+        }
+      }
+      &__btn{
+        color: #fff;
+        text-decoration: none;
+      }
+      .footer-logo{
+        height: 49px;
+        width: auto;
+        display: block;
+      }
+      .putup-btn{
+        position: fixed;right: 32px;bottom: 32px;
+        width: 120px;
+        height: 120px;
+        background-color: #3CCACE;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4%;
+        span{
+          font-size: 18px;
+          margin-bottom: 5px;
+          color: #fff;
+        }
+      }
+    }
+
+  
