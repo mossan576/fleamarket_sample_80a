@@ -9,3 +9,281 @@
 .signin-btn{
   text-decoration: none;
 }
+
+.Sell-main {
+  display: flex;
+  justify-content: center;
+  width: 700px;
+  background-color: white;
+}
+
+.icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+  padding: 43px 297px 82px;
+  margin-top: 10px;
+}
+
+.Hidden {
+  display: none;
+}
+
+.sell-box {
+  width: 700px;
+  max-width: 700px;
+  &__sell-form {
+  }
+  
+  &__image-frame {
+    border-bottom: 1px solid #cccccc;
+    padding: 40px;
+    &__title {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    &__guide {
+      margin-top: 16px;
+      font-size: 14px;
+    }
+  }
+
+  &__upload {
+    background-color:#F5F5F5;
+    border: 1px dashed #cccccc;
+    width: 620px;
+    height: 150px;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &__add-image {
+      background-color:#F5F5F5;
+      width: 620px;
+      height: 150px;
+    }
+    &__text {
+      text-align: center;
+      font-size: 12px;
+      position: absolute;
+      margin-top: 30px;
+    }
+  }
+
+  &__item {
+    border-bottom: 1px solid #cccccc;
+    padding: 40px;
+
+    &__name {
+      font-weight: 600;
+      font-size: 14px;
+      margin-top: 16px;
+    }
+    &__description {
+      font-weight: 600;
+      font-size: 14px;
+      margin-top: 32px;
+    }
+    &__form {
+      margin-top: 16px;
+      padding: 0 16px;
+      height: 48px;
+      width: 620px;
+      font-size: 16px;
+      font-weight: normal;
+    }
+    &__description-form {
+      resize: vertical;
+      font-weight: normal;
+      font-size: 16px;
+      width: 620px;
+      height: 154px;
+      margin-top: 16px;
+      padding: 13px 16px;
+    }
+    &__word-counter {
+      text-align: right;
+      margin-top: 16px;
+      font-size: 12px;
+    }
+  }
+
+  &__detail {
+    border-bottom: 1px solid #cccccc;
+    padding: 40px;
+
+    &__title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #888888;
+    }
+    &__category {
+      margin-top: 24px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    &__form {
+      margin-top: 14px;
+      font-weight: normal;
+      padding: 0 16px;
+      height: 48px;
+      width: 620px;
+      font-size: 16px;
+    }
+    &__size {
+      margin-top: 24px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    &__brand {
+      margin-top: 24px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    &__status {
+      margin-top: 24px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+
+  &__freight {
+    border-bottom: 1px solid #cccccc;
+    padding: 40px;
+
+    &__title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #888888;
+    }
+    &__charge {
+      margin-top: 24px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    &__shipment-source {
+      margin-top: 24px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    &__ship-date {
+      margin-top: 24px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    &__form {
+      margin-top: 14px;
+      font-weight: normal;
+      font-size: 16px;
+      padding: 0 16px;
+      height: 48px;
+      width: 620px;
+    }
+  }
+
+  &__price {
+    padding: 40px 40px 0;
+    &__title {
+      color: #888888;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__price-area {
+    display: flex;
+    align-items: center;
+    padding-bottom: 12px;
+
+    &__selling-price {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    &__price-require {
+      background-color: #3CCACE;
+      margin-left: 8px;
+      font-weight: 600;
+      font-size: 12px;
+      padding: 2px 4px;
+      border-radius: 2px;
+      color: #fff;
+      width: 32px;
+      height: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    &__yen {
+      margin-right: 8px;
+      margin-left: auto;
+      font-size: 14px;
+    }
+    &__form {
+      width: 285px;
+      height: 48px;
+      padding: 0 16px;
+      text-align: right;
+    }
+  }
+
+  &__commission {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #cccccc;
+    padding: 12px 0;
+  }
+
+  &__profit {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+  }
+
+  &__actions {
+    margin: 0 auto 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__submit-btn{
+      width: 360px;
+      color: #fff;
+      background: #3CCACE;
+      height: 50px;
+      border: 1px solid #3CCACE;
+      border-radius: 4px;
+      margin-top: 32px;
+    }
+  }
+
+  &__require {
+    background-color: #3CCACE;
+    margin-left: 8px;
+    padding: 2px 4px;
+    font-size: 12px;
+    border-radius: 2px;
+    color: #fff;
+    width: 32px;
+    height: 16px;
+    
+    &--any {
+    background-color: #BFBFBF;
+    color: #fff;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-size: 12px;
+    margin-left: 8px;
+    }
+  }
+}
+
+.warning {
+  margin: 0 40px 64px;
+  &__text {
+    font-size: 12px;
+  }
+}
+
