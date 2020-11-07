@@ -14,7 +14,7 @@
               .sell-box__upload
                 .sell-box__upload__image
                   = f.label :image ,class: "sell-box__upload__add-image" do
-                    = icon('fas','camera', class: "icon")
+                    = icon('fas','camera', class: "camera-icon")
                     = f.file_field :image, class: 'Hidden'
                 .sell-box__upload__text
                   ドラッグアンドドロップ
@@ -25,7 +25,7 @@
                 = f.label :商品名 ,class: "sell-box__item__name"
                 %span.sell-box__require 必須
                 %br
-                = f.text_field :item_name, class: "sell-box__item__form", placeholder: " 40文字まで", maxlength:"40"
+                = f.text_field :item_name, class: "sell-box__item__form", placeholder: "40文字まで", maxlength:"40"
               .sell-box__item__description
                 = f.label :商品の説明 ,class: "sell-box__item__description"
                 %span.sell-box__require 必須
@@ -72,9 +72,8 @@
                 %span.sell-box__require 必須
                 %br
                 = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {} ,class: "sell-box__freight__form"
-                -# = f.select :shipmentSource,[["選択してください", 1],["大阪", 2], ["東京", 3], ["広島", 4]], {} ,class: "sell-box__freight__form"
               .sell-box__freight__ship-date
-                = f.label :発送までの日数 ,class: "sell-box__freigt__ship-dates"
+                = f.label :発送までの日数 ,class: "sell-box__freigt__ship-date"
                 %span.sell-box__require 必須
                 %br
                 = f.select :shipDate ,[["選択してください", 1],["1~2日で発送", 2], ["2~3日で発送", 3], ["4~7日で発送", 4]], {},class: "sell-box__freight__form"
@@ -106,4 +105,3 @@
     .Footer
       = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: "logo"
       .Foote__text © FURIMA 
-
