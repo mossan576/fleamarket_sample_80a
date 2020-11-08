@@ -1,0 +1,107 @@
+.Flex.Center.Base
+  .Container
+    .Header
+      = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: "logo"
+    .Sell-main
+      .sell-box
+        = form_with url: items_new_path do |f|
+          .sell-box__sell-form
+            .sell-box__image-frame
+              .sell-box__image-frame__title
+                出品画像
+                %span.sell-box__require 必須
+              .sell-box__image-frame__guide 最大10枚までアップロードできます
+              .sell-box__upload
+                .sell-box__upload__image
+                  = f.label :image ,class: "sell-box__upload__add-image" do
+                    = icon('fas','camera', class: "camera-icon")
+                    = f.file_field :image, class: 'Hidden'
+                .sell-box__upload__text
+                  ドラッグアンドドロップ
+                  %br またはクリックしてファイルをアップロード
+            .sell-box__item
+              .sell-box__item__title-area
+              .sell-box__item__name
+                = f.label :商品名 ,class: "sell-box__item__name"
+                %span.sell-box__require 必須
+                %br
+                = f.text_field :item_name, class: "sell-box__item__form", placeholder: "40文字まで", maxlength:"40"
+              .sell-box__item__description
+                = f.label :商品の説明 ,class: "sell-box__item__description"
+                %span.sell-box__require 必須
+                %br
+                = f.text_area :description, class: "sell-box__item__description-form", placeholder: "商品の説明（必須 1,000文字以内） &#13;&#10;（色、素材、重さ、定価、注意点など） &#13;&#10; &#13;&#10;例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。".html_safe, maxlength:"1000"
+              .sell-box__item__word-counter 0/1000
+            .sell-box__detail
+              .sell-box__detail__title 商品詳細
+              .sell-box__detail__category
+                = f.label :カテゴリー ,class: "sell-box__detail__category"
+                %span.sell-box__require 必須
+                %br
+                = f.select :category ,[["選択してください", 1],["メンズ", 1], ["レディース", 2], ["キッズ", 3]], {},class: "sell-box__detail__form"
+                %br/
+                
+                = f.select :childCategory ,[["選択してください", 1],["トップス", 1], ["ボトムス", 2], ["シューズ", 3]], {},class: "sell-box__detail__form"
+                %br/
+                
+                = f.select :grandchildCategory ,[["選択してください", 1],["Tシャツ", 1], ["シャツ", 2], ["パーカー", 3]], {},class: "sell-box__detail__form"
+              .sell-box__detail__size
+                = f.label :サイズ ,class: "sell-box__detai__size"
+                %span.sell-box__require 必須
+                %br
+                = f.select :size ,[["選択してください", 1],["XXS以下", 2], ["XS(SS)", 3], ["S", 4], ["M", 5], ["L", 6], ["XL(LL)", 7], ["2XL(3L)", 8], ["3XL(4L)", 9], ["4XL(5L)", 10], ["FREE SIZE", 11]], {},class: "sell-box__detail__form"
+              .sell-box__detail__brand
+                = f.label :ブランド ,class: "sell-box__detail__brand"
+                %span.sell-box__require--any 任意
+                %br
+                = f.text_field :brand ,class: "sell-box__detail__form", placeholder: " 例）シャネル"
+              .sell-box__detail__status
+                = f.label :商品の状態 ,class: "sell-box__detail__status"
+                %span.sell-box__require 必須
+                %br
+                = f.select :status ,[["選択してください", 1],["新品、未使用", 2], ["未使用に近い", 3], ["目立った傷や汚れなし", 4], ["やや傷や汚れあり", 5], ["傷や汚れあり", 6], ["全体的に状態が悪い", 7]], {},class: "sell-box__detail__form"
+            .sell-box__freight
+              %h3.sell-box__freight__title 配送について
+              .sell-box__freight__charge
+                = f.label :配送料の負担 ,class: "sell-box__freigt__charge"
+                %span.sell-box__require 必須
+                %br
+                = f.select :charage ,[["選択してください", 1],["送料込み(出品者負担)", 2], ["着払い(購入者負担)", 3]], {},class: "sell-box__freight__form"
+              .sell-box__freight__shipment-source
+                = f.label :配送元の地域 ,class: "sell-box__freigt__shipment-source"
+                %span.sell-box__require 必須
+                %br
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {} ,class: "sell-box__freight__form"
+              .sell-box__freight__ship-date
+                = f.label :発送までの日数 ,class: "sell-box__freigt__ship-date"
+                %span.sell-box__require 必須
+                %br
+                = f.select :shipDate ,[["選択してください", 1],["1~2日で発送", 2], ["2~3日で発送", 3], ["4~7日で発送", 4]], {},class: "sell-box__freight__form"
+            .sell-box__price
+              %h3.sell-box__price__title 価格（¥300〜9,999,999）
+              .sell-box__price-area
+                = f.label :販売価格 ,class: "sell-box__price-area__selling-price"
+                .sell-box__price-area__price-require 必須
+                .sell-box__price-area__yen ￥
+                = f.text_field :price, class: "sell-box__price-area__form", placeholder: " 0"
+              .sell-box__commission
+                .sell-box__commission__text 販売手数料（10％）
+                .sell-box__commission__sum ー
+              .sell-box__profit
+                .sell-box__profit__text 販売利益
+                .sell-box__profit__sum ー
+            .sell-box__actions
+              = f.submit "出品する",class: 'sell-box__actions__submit-btn'
+              %br
+              = link_to root_path,class: "sell-box__actions__back-btn" do
+                もどる
+          .warning
+            .warning__text
+              禁止されている行為および出品物を必ずご確認ください。
+              偽ブランド品や盗品物などの販売は犯罪であり、
+              法律により処罰される可能性があります。 
+              また、出品をもちまして加盟店規約に同意したことになります。
+            
+    .Footer
+      = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: "logo"
+      .Foote__text © FURIMA 
