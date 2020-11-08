@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'items#index'
   resources:users, only: [:show, :edit]
   resources:card, only: :new
+  resources:items, only: [:new, :create]
   get 'transactions/buy'
   get 'transactions/done'
 end
