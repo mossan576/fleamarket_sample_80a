@@ -22,18 +22,19 @@
         新規会員登録
 .main
   %section.mainView
-    .maincontent
-      %h2.maincontent__subtitle
-        %br
-          人生を変えるフリマアプリ
-      .priceFurima.maincontent__text
-        FURIMAはだれでも簡単に出品・購入できる
-        %brフリマアプリです
-      .maincontent__btn
-        = link_to "#", class: "aMain" do
-          = image_tag 'material/pict/bn_app_store.png', class: "appPict", alt: "リンゴ"
-        = link_to "#", class: "bMain" do
-          = image_tag 'material/pict/google-play-badge .png', class: "googlePict", alt: "グーグル"
+    .viewMain
+      .maincontent
+        %h2.maincontent__subtitle
+          %br
+            人生を変えるフリマアプリ
+        .priceFurima.maincontent__text
+          FURIMAはだれでも簡単に出品・購入できる
+          %brフリマアプリです
+        .maincontent__btn
+          = link_to "#", class: "aMain" do
+            = image_tag 'material/pict/bn_app_store.png', class: "appPict", alt: "リンゴ"
+          = link_to "#", class: "bMain" do
+            = image_tag 'material/pict/google-play-badge .png', class: "googlePict", alt: "グーグル"
   %section.topReason
     %h2.subMenu
       FURIMAが選ばれる３つの理由
