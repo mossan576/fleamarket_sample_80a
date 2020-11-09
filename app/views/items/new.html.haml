@@ -13,9 +13,9 @@
               .sell-box__image-frame__guide 最大10枚までアップロードできます
               .sell-box__upload
                 .sell-box__upload__image
-                  = f.label :image ,class: "sell-box__upload__add-image" do
+                  = f.label :images ,class: "sell-box__upload__add-image" do
                     = icon('fas','camera', class: "camera-icon")
-                    = f.file_field :image, class: 'Hidden'
+                    = f.file_field :images, multiple: true, class: 'Hidden'
                 .sell-box__upload__text
                   ドラッグアンドドロップ
                   %br またはクリックしてファイルをアップロード
@@ -25,7 +25,7 @@
                 = f.label :商品名 ,class: "sell-box__item__name"
                 %span.sell-box__require 必須
                 %br
-                = f.text_field :item_name, class: "sell-box__item__form", placeholder: "40文字まで", maxlength:"40"
+                = f.text_field :name, class: "sell-box__item__form", placeholder: "40文字まで", maxlength:"40"
               .sell-box__item__description
                 = f.label :商品の説明 ,class: "sell-box__item__description"
                 %span.sell-box__require 必須
@@ -45,9 +45,9 @@
                 %br/
                 
                 = f.select :grandchildCategory ,[["選択してください", 1],["Tシャツ", 1], ["シャツ", 2], ["パーカー", 3]], {},class: "sell-box__detail__form"
-              .sell-box__detail__size
+                .sell-box__detail__size
                 = f.label :サイズ ,class: "sell-box__detai__size"
-                %span.sell-box__require 必須
+                %span.sell-box__require--any 任意
                 %br
                 = f.select :size ,[["選択してください", 1],["XXS以下", 2], ["XS(SS)", 3], ["S", 4], ["M", 5], ["L", 6], ["XL(LL)", 7], ["2XL(3L)", 8], ["3XL(4L)", 9], ["4XL(5L)", 10], ["FREE SIZE", 11]], {},class: "sell-box__detail__form"
               .sell-box__detail__brand
@@ -66,17 +66,17 @@
                 = f.label :配送料の負担 ,class: "sell-box__freigt__charge"
                 %span.sell-box__require 必須
                 %br
-                = f.select :charage ,[["選択してください", 1],["送料込み(出品者負担)", 2], ["着払い(購入者負担)", 3]], {},class: "sell-box__freight__form"
+                = f.select :freight ,[["選択してください", 1],["送料込み(出品者負担)", 2], ["着払い(購入者負担)", 3]], {},class: "sell-box__freight__form"
               .sell-box__freight__shipment-source
                 = f.label :配送元の地域 ,class: "sell-box__freigt__shipment-source"
                 %span.sell-box__require 必須
                 %br
-                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {} ,class: "sell-box__freight__form"
+                = f.collection_select :shipment_source, Prefecture.all, :id, :name, {} ,class: "sell-box__freight__form"
               .sell-box__freight__ship-date
                 = f.label :発送までの日数 ,class: "sell-box__freigt__ship-date"
                 %span.sell-box__require 必須
                 %br
-                = f.select :shipDate ,[["選択してください", 1],["1~2日で発送", 2], ["2~3日で発送", 3], ["4~7日で発送", 4]], {},class: "sell-box__freight__form"
+                = f.select :ship_date ,[["選択してください", 1],["1~2日で発送", 2], ["2~3日で発送", 3], ["4~7日で発送", 4]], {},class: "sell-box__freight__form"
             .sell-box__price
               %h3.sell-box__price__title 価格（¥300〜9,999,999）
               .sell-box__price-area

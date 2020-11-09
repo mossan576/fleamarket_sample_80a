@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_11_08_141524) do
     t.integer "ship_date", null: false
     t.integer "price", null: false
     t.string "brand"
+    t.string "size"
     t.integer "buyer_id"
     t.bigint "user_id", null: false
     t.bigint "category_id", null: false
@@ -63,11 +64,6 @@ ActiveRecord::Schema.define(version: 2020_11_08_141524) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
-  end
-
-  create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
