@@ -51,9 +51,9 @@ ActiveRecord::Schema.define(version: 2020_11_08_141524) do
     t.string "name", null: false
     t.text "description", null: false
     t.string "status", null: false
-    t.integer "freight", null: false
+    t.string "freight", null: false
     t.string "shipment_source", null: false
-    t.integer "ship_date", null: false
+    t.string "ship_date", null: false
     t.integer "price", null: false
     t.string "brand"
     t.string "size"
