@@ -38,18 +38,18 @@
                 = f.label :カテゴリー ,class: "sell-box__detail__category"
                 %span.sell-box__require 必須
                 %br
-                = f.select :category ,[["選択してください", 1],["メンズ", 1], ["レディース", 2], ["キッズ", 3]], {},class: "sell-box__detail__form"
+                = f.select :category_id ,[["選択してください", ""],["メンズ", 1], ["レディース", 2], ["キッズ", 3]], {},class: "sell-box__detail__form"
                 %br/
                 
-                = f.select :childCategory ,[["選択してください", 1],["トップス", 1], ["ボトムス", 2], ["シューズ", 3]], {},class: "sell-box__detail__form"
+                = f.select :childCategory ,[["選択してください", ""],["トップス", 1], ["ボトムス", 2], ["シューズ", 3]], {},class: "sell-box__detail__form"
                 %br/
                 
-                = f.select :grandchildCategory ,[["選択してください", 1],["Tシャツ", 1], ["シャツ", 2], ["パーカー", 3]], {},class: "sell-box__detail__form"
+                = f.select :grandchildCategory ,[["選択してください", ""],["Tシャツ", 1], ["シャツ", 2], ["パーカー", 3]], {},class: "sell-box__detail__form"
                 .sell-box__detail__size
                 = f.label :サイズ ,class: "sell-box__detai__size"
                 %span.sell-box__require--any 任意
                 %br
-                = f.select :size ,[["選択してください", 1],["XXS以下", 2], ["XS(SS)", 3], ["S", 4], ["M", 5], ["L", 6], ["XL(LL)", 7], ["2XL(3L)", 8], ["3XL(4L)", 9], ["4XL(5L)", 10], ["FREE SIZE", 11]], {},class: "sell-box__detail__form"
+                = f.select :size ,[["選択してください", ""],["XXS以下", "XXS以下"], ["XS(SS)", "XS(SS)"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL(LL)", "XL(LL)"], ["2XL(3L)", "2XL(3L)"], ["3XL(4L)", "3XL(4L)"], ["4XL(5L)", "4XL(5L)"], ["FREE SIZE", "FREE SIZE"]], {},class: "sell-box__detail__form"
               .sell-box__detail__brand
                 = f.label :ブランド ,class: "sell-box__detail__brand"
                 %span.sell-box__require--any 任意
@@ -59,14 +59,14 @@
                 = f.label :商品の状態 ,class: "sell-box__detail__status"
                 %span.sell-box__require 必須
                 %br
-                = f.select :status ,[["選択してください", 1],["新品、未使用", 2], ["未使用に近い", 3], ["目立った傷や汚れなし", 4], ["やや傷や汚れあり", 5], ["傷や汚れあり", 6], ["全体的に状態が悪い", 7]], {},class: "sell-box__detail__form"
+                = f.select :status ,[["選択してください", ""],["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]], {},class: "sell-box__detail__form"
             .sell-box__freight
               %h3.sell-box__freight__title 配送について
               .sell-box__freight__charge
                 = f.label :配送料の負担 ,class: "sell-box__freigt__charge"
                 %span.sell-box__require 必須
                 %br
-                = f.select :freight ,[["選択してください", 1],["送料込み(出品者負担)", 2], ["着払い(購入者負担)", 3]], {},class: "sell-box__freight__form"
+                = f.select :freight ,[["選択してください", ""],["送料込み(出品者負担)", "送料込み(出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"]], {},class: "sell-box__freight__form"
               .sell-box__freight__shipment-source
                 = f.label :配送元の地域 ,class: "sell-box__freigt__shipment-source"
                 %span.sell-box__require 必須
@@ -76,7 +76,7 @@
                 = f.label :発送までの日数 ,class: "sell-box__freigt__ship-date"
                 %span.sell-box__require 必須
                 %br
-                = f.select :ship_date ,[["選択してください", 1],["1~2日で発送", 2], ["2~3日で発送", 3], ["4~7日で発送", 4]], {},class: "sell-box__freight__form"
+                = f.select :ship_date ,[["選択してください", ""],["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]], {},class: "sell-box__freight__form"
             .sell-box__price
               %h3.sell-box__price__title 価格（¥300〜9,999,999）
               .sell-box__price-area

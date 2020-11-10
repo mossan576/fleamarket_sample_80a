@@ -9,5 +9,6 @@ class Item < ApplicationRecord
     validates :ship_date
     validates :price
     validates :images
+    validates :category_id
   end
 end
