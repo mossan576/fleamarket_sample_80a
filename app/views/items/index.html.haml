@@ -1,10 +1,349 @@
-- if user_signed_in?
-  = link_to "#",class: "signin-btn" do
-    マイページ
-  = link_to destroy_user_session_path, method: :delete, class: "signup-btn" do
-    ログアウト
-- else
-  = link_to new_user_session_path,class: "signin-btn" do
-    ログイン
-  = link_to new_user_registration_path,class: "signup-btn" do
-    新規会員登録
+.header
+  .header__top
+    .header__logo
+      = link_to "/", class:"root__btn" do
+        = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: 'logo'
+    .header__index
+      .index-form
+        = form_with url: items_index_path, local: true do |f|
+          = f.text_field :keyword, placeholder:"キーワードから探す", class: "search-input"
+      %button.index-btn
+        = image_tag "material/icon/icon-search 1.png", alt: "フリマロゴ", class: 'search-logo'
+  .header__menu
+    .header__menu--left
+      = link_to "#", class:"menu__list--btn" do
+        カテゴリ
+      = link_to "#", class:"menu__list--btn" do
+        ブランド
+    .header__menu--right
+      - if user_signed_in?
+        = link_to "#",class: "menu__list--btn" do
+          マイページ
+        = link_to destroy_user_session_path, method: :delete, class: "menu__list--btn" do
+          ログアウト
+      - else
+        = link_to new_user_session_path, class:"menu__list--btn" do
+          ログイン
+        = link_to new_user_registration_path, class:"menu__list--btn" do
+          新規会員登録
+.main
+  %section.mainView
+    .viewMain
+      .maincontent
+        %h2.maincontent__subtitle
+          %br
+            人生を変えるフリマアプリ
+        .priceFurima.maincontent__text
+          FURIMAはだれでも簡単に出品・購入できる
+          %brフリマアプリです
+        .maincontent__btn
+          = link_to "#", class: "aMain" do
+            = image_tag 'material/pict/bn_app_store.png', class: "appPict", alt: "リンゴ"
+          = link_to "#", class: "bMain" do
+            = image_tag 'material/pict/google-play-badge .png', class: "googlePict", alt: "グーグル"
+  %section.topReason
+    %h2.subMenu
+      FURIMAが選ばれる３つの理由
+    .contents
+      .secondContent
+        .contentPict
+          %span.number
+            1
+          = image_tag 'material/pict/pict-reason-01.jpg', class: "listingPict", alt: "出品"
+        %h3.contentText
+          %span 3分
+          ですぐに出品
+        .priceFurima.contentManner
+          スマホで入力するだけですぐに出品できる！
+      .secondContent
+        .contentPict
+          %span.number
+            2
+          = image_tag 'material/pict/pict-reason-02.jpg', class: "listingPict", alt: "シンプル"
+        %h3.contentText
+          %span シンプル
+          で使いやすい
+        .priceFurima.contentManner
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+      .secondContent
+        .contentPict
+          %span.number
+            3
+          = image_tag 'material/pict/pict-reason-03.jpg', class: "listingPict", alt: "手数料"
+        %h3.contentText
+          手数料
+          %span業界最安
+        .priceFurima.contentManner
+          最大3％でお得に出品＆購入！
+  %section.thirdMenu
+    .thirdMenu__inner
+      %h2.subManner
+        会員数日本一位
+      .priceFurima.text
+        FURIMAは、フリマアプリで最も人気。
+        %br
+        出品・購入も業界最多です！
+        %br
+        ほしかったあの商品に出会えるかもしれません。
+      .btn
+        = link_to "#", class: "aMain" do
+          = image_tag 'material/pict/bn_app_store.png', class: "appPict", alt: "リンゴ"
+        = link_to "#", class: "bMain" do
+          = image_tag 'material/pict/google-play-badge .png', class: "googlePict", alt: "グーグル"
+  %section.furimaFuture
+    %h2.center
+      FURIMAの特徴
+    .menus
+      %section.childMenu
+        %figure.furimaImage
+          = image_tag 'material/icon/icon-01.png', class: "men", alt: "男性"
+        %h3.menu__subtitle
+          簡単に売り買いできる
+        .priceFurima.menu__detail
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      %section.childMenu
+        %figure.furimaImage
+          = image_tag 'material/icon/icon-03.png', class: "woman", alt: "女性"
+        %h3.menu__subtitle
+          売上金は即日振り込みに対応
+        .priceFurima.menu__detail
+          午前9時までに振り込みを依頼いただければ、翌日に指定の口座に入金いたします！
+      %section.childMenu
+        %figure.furimaImage
+          = image_tag 'material/icon/icon-04.png', class: "card", alt: "カード"
+        %h3.menu__subtitle
+          様々な支払いに対応
+        .priceFurima.menu__detail
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+  %section.picupContents
+    %h2.top
+      ピックアップカテゴリー
+    .newBox
+      .newTop
+        = link_to "#", class: "newPost" do
+          %h3.title
+            新規投稿商品
+      .newLists
+        .newList
+          = link_to "#", class: "beef" do
+            %figure.newList--image
+              = image_tag 'material/item/beef.jpg', class: "meat", alt: "肉"
+            .newList--body
+              %h3.name
+                ローストビーフ
+              .details
+                %ul
+                  %li.foodPrice
+                    1129円
+                  %li.star
+                    %i.fas.fa-star
+                      29
+                .priceFurima
+                  (税込）
+        .newList
+          = link_to "#", class: "beef" do
+            %figure.newList--image
+              = image_tag 'material/item/IMG_9072.jpg', class: "meat", alt: "肉"
+            .newList--body
+              %h3.name
+                もやし
+              .details
+                %ul
+                  %li.foodPrice
+                    5円
+                  %li.star
+                    %i.fas.fa-star
+                      84
+                .priceFurima
+                  (税込）
+        .newList
+          = link_to "#", class: "beef" do
+            %figure.newList--image
+              = image_tag 'material/item/a007.png', class: "meat", alt: "肉"
+            .newList--body
+              %h3.name
+                魚
+              .details
+                %ul
+                  %li.foodPrice
+                    非売品
+                  %li.star
+                    %i.fas.fa-star
+                      0
+                .priceFurima
+                  (税込)
+        .newList
+          = link_to "#", class: "beef" do
+            %figure.newList--image
+              = image_tag 'material/item/a004.png', class: "meat", alt: "肉"
+            .newList--body
+              %h3.name
+                棒棒鶏
+              .details
+                %ul
+                  %li.foodPrice
+                    580円
+                  %li.star
+                    %i.fas.fa-star
+                      ５８０
+                .priceFurima
+                  (税込)
+        .newList
+          = link_to "#", class: "beef" do
+            %figure.newList--image
+              = image_tag 'material/item/a001.png', class: "meat", alt: "肉"
+            .newList--body
+              %h3.name
+                カレー
+              .details
+                %ul
+                  %li.foodPrice
+                    777円
+                  %li.star
+                    %i.fas.fa-star
+                      100
+                .priceFurima
+                  (税込）
+  %section.picupContents
+    %h2.top
+      ピックアップブランド
+    .newBox
+      .newTop
+        = link_to "#", class: "brand" do
+          %h3.title
+            アーカイバ
+      .newLists
+        .newList
+          = link_to "#", class: "beef" do
+            %figure.newList--image
+              = image_tag 'material/item/beef.jpg', class: "meat", alt: "肉"
+            .newList--body
+              %h3.name
+                ローストビーフ
+              .details
+                %ul
+                  %li.foodPrice
+                    1129円
+                  %li.star
+                    %i.fas.fa-star
+                      29
+                .priceFurima
+                  (税込）
+        .newList
+          = link_to "#", class: "beef" do
+            %figure.newList--image
+              = image_tag 'material/item/IMG_9072.jpg', class: "meat", alt: "肉"
+            .newList--body
+              %h3.name
+                もやし
+              .details
+                %ul
+                  %li.foodPrice
+                    5円
+                  %li.star
+                    %i.fas.fa-star
+                      84
+                .priceFurima
+                  (税込）
+        .newList
+          = link_to "#", class: "beef" do
+            %figure.newList--image
+              = image_tag 'material/item/a007.png', class: "meat", alt: "肉"
+            .newList--body
+              %h3.name
+                魚
+              .details
+                %ul
+                  %li.foodPrice
+                    非売品
+                  %li.star
+                    %i.fas.fa-star
+                      0
+                .priceFurima
+                  (税込)
+        .newList
+          = link_to "#", class: "beef" do
+            %figure.newList--image
+              = image_tag 'material/item/a004.png', class: "meat", alt: "肉"
+            .newList--body
+              %h3.name
+                棒棒鶏
+              .details
+                %ul
+                  %li.foodPrice
+                    580円
+                  %li.star
+                    %i.fas.fa-star
+                      580
+                .priceFurima
+                  (税込)
+        .newList
+          = link_to "#", class: "beef" do
+            %figure.newList--image
+              = image_tag 'material/item/a001.png', class: "meat", alt: "肉"
+            .newList--body
+              %h3.name
+                カレー
+              .details
+                %ul
+                  %li.foodPrice
+                    777円
+                  %li.star
+                    %i.fas.fa-star
+                      100
+                .priceFurima
+                  (税込）
+
+  .footer
+    .footer__image
+      = image_tag "material/pict/bg-appBanner-pict.jpg", alt: "footer-image", class:"footer__image"
+      .footer__message
+        だれでもかんたん、人生を変えるフリマアプリ
+        %h2 今すぐ無料ダウンロード！
+      = link_to "#", class:"footer__btn" do
+        = image_tag 'material/pict/bn_app_store.png', alt: "AppStore", class:"AppStore-logo"
+      = link_to "#", class:"footer__btn" do
+        = image_tag "https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png", alt: "googleplay", class:"googleplay-logo"
+    %ul.footer__contents
+      %li.footer__contents--left
+        %h2 FURIMAについて
+        %ul.footer__content
+          %li
+            = link_to "#", class:"footer__btn" do
+              会社概要（運営会社）
+          %li
+            = link_to "#", class:"footer__btn" do
+              プライバシーポリシー
+          %li
+            = link_to "#", class:"footer__btn" do
+              FURIMA利用規約
+          %li
+            = link_to "#", class:"footer__btn" do
+              ポイントに関する特約
+      %li.footer__contents--center 
+        %h2 FURIMAを見る
+        %ul.footer__content
+          %li
+            = link_to "#", class:"footer__btn" do
+              カテゴリー一覧
+          %li
+            = link_to "#", class:"footer__btn" do
+              ブランド一覧
+      %li.footer__contents--right
+        %h2 ヘルプ＆ガイド
+        %ul.footer__content
+          %li
+            = link_to "#", class:"footer__btn" do
+              FURIMAガイド
+          %li
+            = link_to "#", class:"footer__btn" do
+              FURIMAロゴ利用ガイドライン
+          %li
+            = link_to "#", class:"footer__btn" do
+              お知らせ
+    = link_to "/", class:"root__btn" do
+      = image_tag "material/logo/logo-white.png", alt: "フリマロゴ", class: 'footer-logo'
+    ©︎FURIMA
+    .putup-btn
+      %span 出品する
+      = image_tag 'material/icon/icon_camera.png', alt: '出品マーク', height: '54px', width: '54px', class: 'putup-image'
