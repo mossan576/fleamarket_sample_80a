@@ -1,8 +1,10 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.all
+    @items = Item.where(buyer_id: nil)
     @images = Image.all
-    @categories = Category.all
+
+    @brand = Item.where(brand: 'ナイキ')
   end
 
   def new
