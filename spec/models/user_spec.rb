@@ -14,6 +14,13 @@ describe User do
       expect(user.errors[:nickname]).to include("を入力してください")
     end
 
+    it "重複したnicknameが存在する場合登録できないこと" do
+      user = create(:user)
+      another_user = build(:user, nickname: user.nickname)
+      another_user.valid? 
+      expect(another_user.errors[:nickname]).to include("はすでに存在します") 
+    end
+
     it "emailがない場合は登録できないこと" do
       user = build(:user, email: "")
       user.valid?
