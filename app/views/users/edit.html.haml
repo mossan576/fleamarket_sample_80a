@@ -1,0 +1,10 @@
+.Flex.Center.Base
+  .Edit-Container
+    .Header
+      = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: 'logo'
+    .Main
+      = link_to "ログアウト",destroy_user_session_path, method: :delete, class: "log-out"
+        
+    .Footer
+      = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: 'logo'
+      .Footer__text © FURIMA
