@@ -601,11 +601,11 @@
     }
     .newTop {
       text-align: center;
-      .newPost {
+      .newPost, .brand {
         font-size: 24px;
         text-decoration: none;
         color: #3ccace;
-      } 
+      }
       .title {
         font-weight: bold;
       }
@@ -708,7 +708,7 @@
         top: 195px;
         left: 0;
         right: 210px;
-        margin: auto;
+        padding-top: 20px;
       }
       .googleplay-logo{
         height: auto;
@@ -717,7 +717,7 @@
         top: 180px;
         left: 210px;
         right: 0;
-        margin: auto;
+        padding-top: 20px;
       }
       &__contents{
         padding-top: 60px;
