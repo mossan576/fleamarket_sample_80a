@@ -72,6 +72,7 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem 'devise'
+gem 'rails-i18n'
 gem 'font-awesome-sass'
 gem 'active_hash'
 gem "aws-sdk-s3", require: false

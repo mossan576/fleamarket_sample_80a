@@ -10,6 +10,8 @@
             新規会員登録
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .Input-box__field
+            - flash.each do |key, value|
+              = content_tag :div, value, class: key
             .Input-box__input-form
               = f.label :メールアドレス ,class: 'Input-box__input-form--title'
               %br/
