@@ -1,10 +1,13 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
-    @items = Item.where(buyer_id: nil)
-    @images = Image.all
+    # @items = Item.all
+    # @items = Item.limit(5).where(buyer_id: nil).order("id DESC")
+    @items = Item.includes(:images).limit(5).where(buyer_id: nil).order("id DESC")
 
-    @brand = Item.where(brand: 'ナイキ')
+    @images = Image.all
+  end
+
+  def create
   end
 
   def new

@@ -118,13 +118,14 @@
           %h3.title
             新規投稿商品
       .newLists
-        - @items.last(5).reverse_each do |item|
+        -# - @items.last(5).reverse_each do |item|
+        - @items.each do |item|
           .newList
             = link_to "#", class: "beef" do
               %figure.newList--image
-                = image_tag 'material/item/beef.jpg', class: "meat", alt: "肉"
+                = image_tag 'material/item/IMG_9072.jpg', class: "meat", alt: "肉"
                 -# - @images.each do |image|
-                  -# = image.image
+                  -# = @image.image
               .newList--body
                 %h3.name
                   = item.name
@@ -210,8 +211,7 @@
           %h3.title
             アーカイバ
       .newLists
-        - @items = Item.where(brand: 'ナイキ')
-          - @items.last(5).reverse_each do |item|
+        - @items.where(brand: 'ナイキ').each do |item|
           .newList
             = link_to "#", class: "beef" do
               %figure.newList--image
@@ -228,7 +228,7 @@
                         29
                   .priceFurima
                     (税込）
-        -# .newList
+          -# .newList
         -#   = link_to "#", class: "beef" do
         -#     %figure.newList--image
         -#       = image_tag 'material/item/IMG_9072.jpg', class: "meat", alt: "肉"
