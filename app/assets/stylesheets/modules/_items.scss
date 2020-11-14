@@ -502,7 +502,7 @@
             }
           }
           
-        }
+    }
       
     .furimaFuture {
       padding: 60px 100px;
@@ -689,8 +689,7 @@
         width: 180px;
         position: absolute;
         top: 195px;
-        left: 0;
-        right: 210px;
+        right: 52vw;
         padding-top: 20px;
       }
       .googleplay-logo{
@@ -698,11 +697,11 @@
         width: 230px;
         position: absolute;
         top: 180px;
-        left: 210px;
-        right: 0;
+        left: 48vw;
         padding-top: 20px;
       }
       &__contents{
+        text-align: center;
         padding-top: 60px;
         width: 50vw;
         height: 230px;
@@ -720,6 +719,7 @@
         }
       }
       &__btn{
+        font-size: 12px;
         color: #fff;
         text-decoration: none;
       }
@@ -728,20 +728,20 @@
         width: auto;
         display: block;
       }
-      .putup-btn{
-        position: fixed;right: 32px;bottom: 32px;
-        width: 120px;
-        height: 120px;
-        background-color: #3CCACE;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border-radius: 4%;
-        span{
-          font-size: 18px;
-          margin-bottom: 5px;
-          color: #fff;
-        }
+    }
+    .putup-btn{
+      position: fixed;right: 32px;bottom: 32px;
+      width: 120px;
+      height: 120px;
+      background-color: #3CCACE;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4%;
+      span{
+        font-size: 18px;
+        margin-bottom: 5px;
+        color: #fff;
       }
     }
