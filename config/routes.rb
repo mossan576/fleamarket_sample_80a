@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'items/new'
   resources:users, only: [:show, :edit]
   resources:card, only: :new
+  resources:items, only: [:new, :create]
   get 'transactions/buy'
   get 'transactions/done'
 end

@@ -41,7 +41,6 @@ group :development, :test do
   gem 'capistrano-rails-console'
   gem 'rspec-rails', '~> 4.0.0.beta2'
   gem 'factory_bot_rails'
-
 end
 
 group :development do
@@ -76,3 +75,4 @@ gem 'devise'
 gem 'rails-i18n'
 gem 'font-awesome-sass'
 gem 'active_hash'
+gem "aws-sdk-s3", require: false
