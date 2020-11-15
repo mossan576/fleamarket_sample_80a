@@ -5,7 +5,7 @@
     .Card-main
       .Input-box
         %h2.Input-box__title クレジットカード情報入力
-        = form_with url: card_new_path do |f|
+        = form_with url: credit_cards_path, method: :post do |f|
           .Input-box__field
             .Input-box__input-form
               = f.label :カード番号 ,class: 'Input-box__input-form--title'

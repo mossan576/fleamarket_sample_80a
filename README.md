@@ -58,7 +58,7 @@ Things you may want to cover:
 ### Association
  - belongs_to :user
 
-## credit_cards
+## credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |card_id|string|null: false, unique: true|
