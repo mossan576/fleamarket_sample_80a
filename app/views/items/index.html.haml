@@ -123,9 +123,9 @@
           .newList
             = link_to "#", class: "beef" do
               %figure.newList--image
-                = image_tag 'material/item/IMG_9072.jpg', class: "meat", alt: "肉"
-                -# - @images.each do |image|
-                  -# = @image.image
+                -# = image_tag 'material/item/IMG_9072.jpg', class: "meat", alt: "肉"
+                - @images.each do |image|
+                  = image.image
               .newList--body
                 %h3.name
                   = item.name
@@ -212,6 +212,7 @@
             アーカイバ
       .newLists
         - @items.where(brand: 'ナイキ').each do |item|
+          -# - @items = Item.where(brand: 'ナイキ')
           .newList
             = link_to "#", class: "beef" do
               %figure.newList--image
