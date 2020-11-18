@@ -103,15 +103,13 @@
   &__detail {
     border-bottom: 1px solid #cccccc;
     padding: 40px;
+    font-size: 14px;
+    font-weight: 600;
     &__title {
-      font-size: 14px;
-      font-weight: 600;
       color: #888888;
     }
     &__category {
       margin-top: 24px;
-      font-weight: 600;
-      font-size: 14px;
     }
     &__form {
       margin-top: 14px;
@@ -121,45 +119,21 @@
       width: 620px;
       font-size: 16px;
     }
-    &__size {
+    &__size , &__brand , &__status{
       margin-top: 24px;
-      font-weight: 600;
-      font-size: 14px;
-    }
-    &__brand {
-      margin-top: 24px;
-      font-weight: 600;
-      font-size: 14px;
-    }
-    &__status {
-      margin-top: 24px;
-      font-weight: 600;
-      font-size: 14px;
     }
   }
   &__freight {
     border-bottom: 1px solid #cccccc;
     padding: 40px;
+    font-weight: 600;
+    font-size: 14px;
     &__title {
-      font-size: 14px;
-      font-weight: 600;
       color: #888888;
     }
-    &__charge {
+    &__charge , &__shipment-source , &__ship-date{
       margin-top: 24px;
-      font-weight: 600;
-      font-size: 14px;
-    }
-    &__shipment-source {
-      margin-top: 24px;
-      font-weight: 600;
-      font-size: 14px;
-    }
-    &__ship-date {
-      margin-top: 24px;
-      font-weight: 600;
-      font-size: 14px;
-    }
+     }
     &__form {
       margin-top: 14px;
       font-weight: normal;
