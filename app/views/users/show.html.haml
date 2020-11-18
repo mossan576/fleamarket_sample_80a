@@ -27,6 +27,9 @@
             = link_to edit_user_path , class:"menu__list--btn" do
               %li ログアウト
     .content
+      .user-nickname
+        = current_user.nickname
+        さんのマイページ
       .content__title
         重要なお知らせ
       .content__detail
