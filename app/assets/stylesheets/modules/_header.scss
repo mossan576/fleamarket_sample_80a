@@ -4,6 +4,8 @@
   background-color: #fff;
   border-bottom: 1px solid #eee;
   &__top{
+    width: 66vw;
+    margin-left: 17vw;
     line-height: 50px;
     display: flex;
     justify-content: center;
@@ -36,13 +38,22 @@
     
   }
   &__menu{
+    width: 65vw;
+    margin-left: 17.5vw;
     font-size: 14px;
     display: flex;
-    justify-content: space-around;
-    &--left,  &--right {
+    justify-content: space-between;
+    &--left{
       width: 180px;
       display: flex;
       justify-content: space-between;
+    }
+    &--right {
+      display: flex;
+      justify-content: space-between;
+      .menu__list--btn{
+        margin-left: 80px;
+      }
     }
   }
 }
