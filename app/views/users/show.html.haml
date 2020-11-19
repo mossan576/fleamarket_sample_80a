@@ -27,12 +27,12 @@
             = link_to edit_user_path , class:"menu__list--btn" do
               %li ログアウト
     .content
+      .user-nickname
+        = current_user.nickname
+        さんのマイページ
       .content__title
         重要なお知らせ
       .content__detail
         住所の設定をしましょう！
   = render "items/footer"
-  = link_to new_item_path do
-    .putup-btn
-      %span 出品する
-      = image_tag 'material/icon/icon_camera.png', alt: '出品マーク', height: '54px', width: '54px', class: 'putup-image'
+  = render "items/putup-btn"
