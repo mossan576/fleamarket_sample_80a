@@ -1,0 +1,22 @@
+.Flex.Center.Base
+  .Card-Container
+    .Header
+      = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: 'logo'
+    .Card-main
+      .Input-box
+        %h2.Input-box__title 登録クレジットカード情報
+        %br
+        .Input-box__field
+          = "**** **** **** " + @default_credit_card_information.last4
+          %br
+          - exp_month = @default_credit_card_information.exp_month.to_s
+          - exp_year = @default_credit_card_information.exp_year.to_s.slice(2,3)
+          = exp_month + " / " + exp_year
+
+          = form_tag(delete_credit_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+            %input{ type: "hidden", name: "card_id", value: "" }
+            %button 削除する
+
+    .Footer
+      = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: 'logo'
+      .Footer__text © FURIMA

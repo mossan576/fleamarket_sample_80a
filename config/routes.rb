@@ -5,7 +5,15 @@ Rails.application.routes.draw do
   root 'items#index'
   get 'items/new'
   resources:users, only: [:show, :edit]
-  resources:credit_cards, only: [:new, :create]
+
+  resources:credit_cards, only: [:new, :show] do
+    collection do
+      post 'show', to: 'credit_cards#show'
+      post 'pay', to: 'credit_cards#pay'
+      post 'delete', to: 'credit_cards#delete'
+    end
+  end 
+
   resources:items, only: [:new, :create]
   get 'transactions/buy'
   get 'transactions/done'
