@@ -7,14 +7,8 @@
         .itemBox__body
           %ul.list
             %li
-              %img.image1{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}
-              %ul.list2
-                %li.li-2
-                  %img.img-2{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}    
-                %li.li-2
-                  %img.img-2{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/8/a002.png"}
-                %li.li-2
-                  %img.img-2{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/9/a003.png"}
+              - @item.images.first(1).each do |image|
+                = image_tag image, class: "meat"
         .itemBox__price
           %span ￥10000
           .itemBox__price_detail
@@ -67,11 +61,6 @@
       .commentBox
         %ul.commentContents
         %form.new_comment{id:"new_comment", action:"#", charaset:"UTF-8", method:"post"}
-          -# %textarea.textarea{id:"comment_body"}
-          -# %p.noticeMsg 
-          -#   相手のことを考え丁寧なコメントを心がけましょう。
-          -#   %br 
-          -#   不快な言葉遣いなどは利用制限や退会処分となる事があります。
           %button.commentBtn{type: "submit"}
             = icon('fas', 'comment')
             コメントする
@@ -102,7 +91,6 @@
                 %li 
                   = icon('fas','star')
                   1
-              -# %p 
               (税込)
   = render "items/footer"
   = render "items/putup-btn"
