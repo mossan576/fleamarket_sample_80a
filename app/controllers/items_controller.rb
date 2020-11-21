@@ -2,6 +2,9 @@ class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
   
   def index
+    @items = Item.limit(5).where(buyer_id: nil).order("id DESC")
+    
+    @categories = Category.all
   end
 
   def move_to_index
