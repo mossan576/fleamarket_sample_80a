@@ -128,9 +128,8 @@
           .newList
             = link_to "#", class: "beef" do
               %figure.newList--image
-                - item.images.each do |image|
-                  - if item.images.count > 0
-                    = image_tag image.variant(resize:'220x150'), class: "meat"
+                - item.images.first(1).each do |image|
+                  = image_tag image, class: "meat"
               .newList--body
                 %h3.name
                   = item.name
@@ -139,8 +138,6 @@
                     %li.foodPrice
                       = item.price
                     %li.star
-                      -# %i.fas.fa-star
-                        -# 29
                   .priceFurima
                     (税込）
   %section.picupContents
