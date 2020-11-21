@@ -23,6 +23,16 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+    @item = Item.find(params[:id])
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to root_path, notice: '出品を削除しました'
+  end
+
   private
   def item_params
     params.require(:item).permit(:name, :description, :status, :freight, :shipment_source, :ship_date, :price, :brand, :size, :buyer_id, :category_id, images: []).merge(user_id: current_user.id)
