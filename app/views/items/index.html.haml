@@ -126,8 +126,8 @@
           .newList
             = link_to "#", class: "beef" do
               %figure.newList--image
-                - item.images.each do |image|
-                  = image_tag image.variant(resize:'220x150').processed, class: "meat"
+                - item.images.first(1).each do |image|
+                  = image_tag image, class: "meat"
               .newList--body
                 %h3.name
                   = item.name
