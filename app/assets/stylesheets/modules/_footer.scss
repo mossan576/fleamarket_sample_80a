@@ -1,0 +1,74 @@
+.footer{
+  color: #fff;
+  background-color: #272727;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__image{
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    position: relative;
+    text-align: center;
+  }
+  &__message{
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    h2{
+      font-size: 35px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      margin: 10px 0;
+    }
+  }
+  .AppStore-logo{
+    height: auto;
+    width: 180px;
+    position: absolute;
+    top: 195px;
+    right: 52vw;
+    padding-top: 20px;
+  }
+  .googleplay-logo{
+    height: auto;
+    width: 230px;
+    position: absolute;
+    top: 180px;
+    left: 48vw;
+    padding-top: 20px;
+  }
+  &__contents{
+    text-align: center;
+    padding-top: 60px;
+    width: 50vw;
+    height: 230px;
+    display: flex;
+    justify-content: space-around;
+    h2 {
+      height: 50px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .content {
+      font-size: 12px;
+      height: 30px;
+      width: 170px;
+    }
+  }
+  &__btn{
+    font-size: 12px;
+    color: #fff;
+    text-decoration: none;
+  }
+  .footer-logo{
+    height: 49px;
+    width: auto;
+    display: block;
+  }
+}
