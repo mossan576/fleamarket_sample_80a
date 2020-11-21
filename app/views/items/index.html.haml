@@ -124,14 +124,13 @@
           %h3.title
             新規投稿商品
       .newLists
-        -# - @items.last(5).reverse_each do |item|
         - @items.each do |item|
           .newList
             = link_to "#", class: "beef" do
               %figure.newList--image
-                -# = image_tag 'material/item/IMG_9072.jpg', class: "meat", alt: "肉"
-                - @images.each do |image|
-                  = image.image
+                - item.images.each do |image|
+                  - if item.images.count > 0
+                    = image_tag image.variant(resize:'220x150'), class: "meat"
               .newList--body
                 %h3.name
                   = item.name
@@ -140,74 +139,10 @@
                     %li.foodPrice
                       = item.price
                     %li.star
-                      %i.fas.fa-star
-                        29
+                      -# %i.fas.fa-star
+                        -# 29
                   .priceFurima
                     (税込）
-        -# .newList
-        -#   = link_to "#", class: "beef" do
-        -#     %figure.newList--image
-        -#       = image_tag 'material/item/IMG_9072.jpg', class: "meat", alt: "肉"
-        -#     .newList--body
-        -#       %h3.name
-        -#         もやし
-        -#       .details
-        -#         %ul
-        -#           %li.foodPrice
-        -#             5円
-        -#           %li.star
-        -#             %i.fas.fa-star
-        -#               84
-        -#         .priceFurima
-        -#           (税込）
-        -# .newList
-        -#   = link_to "#", class: "beef" do
-        -#     %figure.newList--image
-        -#       = image_tag 'material/item/a007.png', class: "meat", alt: "肉"
-        -#     .newList--body
-        -#       %h3.name
-        -#         魚
-        -#       .details
-        -#         %ul
-        -#           %li.foodPrice
-        -#             非売品
-        -#           %li.star
-        -#             %i.fas.fa-star
-        -#               0
-        -#         .priceFurima
-        -#           (税込)
-        -# .newList
-        -#   = link_to "#", class: "beef" do
-        -#     %figure.newList--image
-        -#       = image_tag 'material/item/a004.png', class: "meat", alt: "肉"
-        -#     .newList--body
-        -#       %h3.name
-        -#         棒棒鶏
-        -#       .details
-        -#         %ul
-        -#           %li.foodPrice
-        -#             580円
-        -#           %li.star
-        -#             %i.fas.fa-star
-        -#               ５８０
-        -#         .priceFurima
-        -#           (税込)
-        -# .newList
-        -#   = link_to "#", class: "beef" do
-        -#     %figure.newList--image
-        -#       = image_tag 'material/item/a001.png', class: "meat", alt: "肉"
-        -#     .newList--body
-        -#       %h3.name
-        -#         カレー
-        -#       .details
-        -#         %ul
-        -#           %li.foodPrice
-        -#             777円
-        -#           %li.star
-        -#             %i.fas.fa-star
-        -#               100
-        -#         .priceFurima
-        -#           (税込）
   %section.picupContents
     %h2.top
       ピックアップブランド
@@ -217,12 +152,12 @@
           %h3.title
             アーカイバ
       .newLists
-        - @items.where(brand: 'ナイキ').each do |item|
-          -# - @items = Item.where(brand: 'ナイキ')
+        - @items.where(brand: '近畿大学').each do |item|
           .newList
             = link_to "#", class: "beef" do
               %figure.newList--image
-                = image_tag 'material/item/beef.jpg', class: "meat", alt: "肉"
+                - item.images.each do |image|
+                  = image_tag image.variant(resize:'220x150').processed, class: "meat"
               .newList--body
                 %h3.name
                   = item.name
@@ -231,74 +166,10 @@
                     %li.foodPrice
                       = item.price
                     %li.star
-                      %i.fas.fa-star
-                        29
+                      -# %i.fas.fa-star
+                        -# 29
                   .priceFurima
                     (税込）
-          -# .newList
-        -#   = link_to "#", class: "beef" do
-        -#     %figure.newList--image
-        -#       = image_tag 'material/item/IMG_9072.jpg', class: "meat", alt: "肉"
-        -#     .newList--body
-        -#       %h3.name
-        -#         もやし
-        -#       .details
-        -#         %ul
-        -#           %li.foodPrice
-        -#             5円
-        -#           %li.star
-        -#             %i.fas.fa-star
-        -#               84
-        -#         .priceFurima
-        -#           (税込）
-        -# .newList
-        -#   = link_to "#", class: "beef" do
-        -#     %figure.newList--image
-        -#       = image_tag 'material/item/a007.png', class: "meat", alt: "肉"
-        -#     .newList--body
-        -#       %h3.name
-        -#         魚
-        -#       .details
-        -#         %ul
-        -#           %li.foodPrice
-        -#             非売品
-        -#           %li.star
-        -#             %i.fas.fa-star
-        -#               0
-        -#         .priceFurima
-        -#           (税込)
-        -# .newList
-        -#   = link_to "#", class: "beef" do
-        -#     %figure.newList--image
-        -#       = image_tag 'material/item/a004.png', class: "meat", alt: "肉"
-        -#     .newList--body
-        -#       %h3.name
-        -#         棒棒鶏
-        -#       .details
-        -#         %ul
-        -#           %li.foodPrice
-        -#             580円
-        -#           %li.star
-        -#             %i.fas.fa-star
-        -#               580
-        -#         .priceFurima
-        -#           (税込)
-        -# .newList
-        -#   = link_to "#", class: "beef" do
-        -#     %figure.newList--image
-        -#       = image_tag 'material/item/a001.png', class: "meat", alt: "肉"
-        -#     .newList--body
-        -#       %h3.name
-        -#         カレー
-        -#       .details
-        -#         %ul
-        -#           %li.foodPrice
-        -#             777円
-        -#           %li.star
-        -#             %i.fas.fa-star
-        -#               100
-        -#         .priceFurima
-        -#           (税込）
 
   = render "items/footer"
   = link_to new_item_path do

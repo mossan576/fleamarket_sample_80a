@@ -3,16 +3,10 @@ class ItemsController < ApplicationController
   
   def index
     @items = Item.all
-    @items = Item.includes(:images).limit(5).where(buyer_id: nil).order("id DESC")
-
-    @images = Image.all
-    # @images = @item.images
-  end
-
-  def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
+    # @items = Item.includes(:category).limit(5).where(buyer_id: nil).order("id DESC")
+    @items = Item.limit(5).where(buyer_id: nil).order("id DESC")
+    
+    @categories = Category.all
   end
 
   def move_to_index
