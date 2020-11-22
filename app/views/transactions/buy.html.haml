@@ -8,19 +8,24 @@
         .purchase-box__item-frame
           .detail
             .detail__image
-              = image_tag "material/item/moyashi.jpg", alt: "商品画像", class: 'item-image'
+              - @item.images.first(1).each do |image|
+                = image_tag image, alt: "商品画像", class: 'item-image'
             .detail__item
-              %h3.detail__item__name 商品名商品名商品名商品名商品名商品名商品名商品名あいうえお
+              %h3.detail__item__name 
+                = @item.name
               .total-cost
-                .total-cost__price 送料込み(税込)
+                .total-cost__price 
+                  = @item.freight
                 .total-cost__en ￥
-                .total-cost__sum 50,000
+                .total-cost__sum 
+                  = @item.price
         .purchase-box__payment
           .payment-area
             %h4.payment-area__title 支払い金額
             .payment-area__total-cost
               .payment-area__total-cost__yen ￥
-              .payment-area__total-cost__sum 50,000
+              .payment-area__total-cost__sum 
+                = @item.price
         .purchase-box__payment-method
           .credit-card
             - if current_user.credit_card.nil?
