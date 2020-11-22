@@ -1,0 +1,253 @@
+.main{
+  background-color: #eeeeee;
+  box-sizing: border-box;
+  .showMain{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    .topContent{
+      width: 700px;
+      height: 1676px;
+      margin: 0 300px;
+      .itemBox{
+        height: 1298px;
+        padding: 24px 40px 40px 40px;
+        background-color: #ffffff;
+        &__name{
+          height: 28px;
+          text-align: center;
+          font-weight: bold;
+          font-size: 24px;
+          margin: 0;
+        }
+        &__body{
+          margin: 16px 0 0 0;
+          height: 443px;
+          .list{
+            list-style: none;
+            height: 443px;
+            width: 620px;
+            padding: 0;
+            margin: 0 30px;
+            li{
+              list-style: none;
+              .image1{
+                height: 346px;
+                width: 560px;
+              }
+              .list2{
+                height: 87px;
+                margin-top: 10px;
+                display: flex;
+                justify-content: center;
+                list-style: none;
+                .li-2{
+                  height: 87px;
+                  width: 140px;
+                  margin-left: 10px;
+                  .img-2{
+                    height: 87px;
+                    width: 140px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .itemBox__price{
+          height: 77px;
+          width: 620px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          font-size: 46px;
+          font-weight: bold;
+          margin: 24px 0;
+          .itemBox__price_detail{
+            font-size: 16px;
+            text-align: center;
+            height: 24px;
+            font-weight: normal;
+          }
+        }
+        .itemDetail{
+          line-height: 1.5;
+          font-size: 18px;
+          margin-bottom: 30px;
+          height: 162px;
+          width: 620px;
+        }
+        .table{
+          height: 431px;
+          width: 620px;
+          margin-bottom: 20px;
+          table{
+            width: 100%;
+            height: 375px;
+            border-collapse: collapse;
+            border: 1px solid #f8f8f8;
+            tbody{
+              height: 619px;
+              width: 430px;
+              display: table-row-group;
+              vertical-align: middle;
+              border-color: inherit;
+              tr{
+                display: table-row;
+                vertical-align: inherit;
+                border-color: inherit;
+                th{
+                  width: 20%;
+                  background-color: #eeeeee;
+                  font-weight: 400;
+                  padding: 8px;
+                  border: 1px solid #dedede;
+                  font-size: 14px;
+                  text-align: center;
+                }
+                td{
+                  width: 61%;
+                  padding: 15px;
+                  border: 1px solid #dedede;
+                  font-size: 14px;
+                  display: table-cell;
+                  vertical-align: inherit;
+                  a{
+                    color: #3CCACE;
+                  }
+                }
+              }
+            }
+          }
+
+        }
+        .optionalArea{
+          height: 48px;
+          width: 620px;
+          font-size: 14px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          box-sizing: border-box;
+          ul{
+            list-style: none;
+            display: flex;
+            margin: 10px 0 0;
+            box-sizing: border-box;
+            .likeBtn{
+              padding: 6px 10px;
+              border-radius: 40px;
+              color: #3CCACE;
+              border: 1px solid #ffb340;
+              box-sizing: border-box;
+            }
+          }
+          .optional{
+            margin: 10px 0 0;
+            display: flex;
+            list-style: none;
+            font-size: 14px;
+            box-sizing: border-box;
+            .optionalBtn{
+              display: list-item;
+              a{
+                padding: 6px 10px;
+                display: inline-block;
+                border-radius: 4px;
+                color: #333333;
+                border: 1px solid #333333;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+      .commentBox{
+        height: 256px;
+        width: 652px;
+        padding: 24px;
+        background-color: #ffffff;
+        margin: 10px 0;
+        text-align: center;
+        .new_comment{
+          height: 256px;
+          width: 652px;
+          text-align: center;
+          textarea{
+            height: 82px;
+            width: 630px;
+            padding: 10px;
+            text-transform: none;
+            text-indent: 0px;
+            border: 1px solid rgb(118, 118, 118), rgb(195, 195, 195);
+          }
+          .noticeMsg{
+            height: 58px;
+            padding: 8px;
+            font-size: 14px;
+            background-color: #f8f8f8;
+            margin: 10px 0;
+            text-align: left;
+          }
+          .commentBtn{
+            height: 48px;
+            width: 377px;
+            padding: 1px 6px;
+            line-height: 48px;
+            background: #3CCACE;
+            border: 1px solid #3CCACE;
+            color: #ffffff;
+            font-size: 18px;
+            border-radius: 100px;
+          }
+        }
+      }
+    }
+    .links{
+      list-style: none;
+      height: 24px;
+      width: 700px;
+      margin: 0 300px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .relatedItems{
+      height: 328px;
+      width: 700px;
+      margin: 0 300px;
+      .relatedItems_bar{
+        height: 65px;
+        width: 700px;
+        margin: 24px 0 8px 0;
+        color: #3CCACE;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 22px;
+        position: relative;
+
+      }
+      .productList{
+        margin: 0 0 10px;
+        float: left;
+        width: calc(100%/3);
+        .relatedProduct{
+          margin: 24px 0 8px;
+          color: #3CCACE;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 22px;
+          position: relative;
+          .productList--image{
+            height: 150px;
+            width: 220p;
+
+          }
+
+        }
+      }
+    }
+  }
+}
