@@ -1,9 +1,9 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  
+  before_action :set_item, only: [:show, :destroy]
+
   def index
     @items = Item.limit(5).where(buyer_id: nil).order("id DESC")
-    
     @categories = Category.all
   end
 
@@ -27,18 +27,23 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def destroy
-    item = Item.find(params[:id])
-    item.destroy
-    redirect_to root_path, notice: '出品を削除しました'
+    if @item.destroy
+      redirect_to root_path, notice: '商品を削除しました'
+    else
+      redirect_to item_path(@item.id), alert: 'エラーが発生しました'
+    end
   end
 
   private
   def item_params
     params.require(:item).permit(:name, :description, :status, :freight, :shipment_source, :ship_date, :price, :brand, :size, :buyer_id, :category_id, images: []).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end
