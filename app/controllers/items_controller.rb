@@ -26,6 +26,20 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    # item.update(item_params)
+    if item.update(item_params)
+      redirect_to root_path, notice: '商品を編集しました'
+    else
+      render :edit
+    end
+  end
+
   private
   def item_params
     params.require(:item).permit(:name, :description, :status, :freight, :shipment_source, :ship_date, :price, :brand, :size, :buyer_id, :category_id, images: []).merge(user_id: current_user.id)
