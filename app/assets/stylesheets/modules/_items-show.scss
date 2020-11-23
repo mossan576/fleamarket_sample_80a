@@ -1,12 +1,9 @@
 .main{
   height: 2142px;
-  //width: 1440px;
   background-color: #eeeeee;
   box-sizing: border-box;
   .showMain{
     height: 100%;
-    // width: 100%;
-    // padding: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +15,6 @@
       margin: 0 300px;
       .itemBox{
         height: 1330px;
-        // width: 620px;
         padding: 24px 40px 40px 40px;
         background-color: #ffffff;
         &__name{
