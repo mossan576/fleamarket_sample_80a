@@ -99,7 +99,7 @@
       .newLists
         - @items.each do |item|
           .newList
-            = link_to "#", class: "beef" do
+            = link_to item_path(item.id), class: "beef" do
               %figure.newList--image
                 - item.images.first(1).each do |image|
                   = image_tag image, class: "meat"
@@ -124,7 +124,7 @@
       .newLists
         - @items.where(brand: '近畿大学').each do |item|
           .newList
-            = link_to "#", class: "beef" do
+            = link_to item_path(item.id), class: "beef" do
               %figure.newList--image
                 - item.images.first(1).each do |image|
                   = image_tag image, class: "meat"
