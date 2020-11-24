@@ -115,7 +115,7 @@
                   font-size: 14px;
                   display: table-cell;
                   vertical-align: inherit;
-                  a{
+                  .table_link{
                     color: #3CCACE;
                   }
                 }
@@ -212,7 +212,7 @@
       margin: 0 300px;
       display: flex;
       justify-content: space-between;
-      li{
+      .link{
         color: #3CCACE;
       }
     }
