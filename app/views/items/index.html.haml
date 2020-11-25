@@ -1,25 +1,4 @@
-.header
-  .header__top
-    .header__logo
-      = link_to "/", class:"root__btn" do
-        = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: 'logo'
-    .header__index
-      .index-form
-        = form_with url: items_index_path, local: true do |f|
-          = f.text_field :keyword, placeholder:"キーワードから探す", class: "search-input"
-      %button.index-btn
-        = image_tag "material/icon/icon-search 1.png", alt: "フリマロゴ", class: 'search-logo'
-  .header__menu
-    .header__menu--left
-      = link_to "#", class:"menu__list--btn" do
-        カテゴリ
-      = link_to "#", class:"menu__list--btn" do
-        ブランド
-    .header__menu--right
-      = link_to new_user_session_path, class:"menu__list--btn" do
-        ログイン
-      = link_to new_user_registration_path, class:"menu__list--btn" do
-        新規会員登録
+= render "items/header"
 .main
   %section.mainView
     .viewMain
@@ -118,86 +97,22 @@
           %h3.title
             新規投稿商品
       .newLists
-        .newList
-          = link_to "#", class: "beef" do
-            %figure.newList--image
-              = image_tag 'material/item/beef.jpg', class: "meat", alt: "肉"
-            .newList--body
-              %h3.name
-                ローストビーフ
-              .details
-                %ul
-                  %li.foodPrice
-                    1129円
-                  %li.star
-                    %i.fas.fa-star
-                      29
-                .priceFurima
-                  (税込）
-        .newList
-          = link_to "#", class: "beef" do
-            %figure.newList--image
-              = image_tag 'material/item/IMG_9072.jpg', class: "meat", alt: "肉"
-            .newList--body
-              %h3.name
-                もやし
-              .details
-                %ul
-                  %li.foodPrice
-                    5円
-                  %li.star
-                    %i.fas.fa-star
-                      84
-                .priceFurima
-                  (税込）
-        .newList
-          = link_to "#", class: "beef" do
-            %figure.newList--image
-              = image_tag 'material/item/a007.png', class: "meat", alt: "肉"
-            .newList--body
-              %h3.name
-                魚
-              .details
-                %ul
-                  %li.foodPrice
-                    非売品
-                  %li.star
-                    %i.fas.fa-star
-                      0
-                .priceFurima
-                  (税込)
-        .newList
-          = link_to "#", class: "beef" do
-            %figure.newList--image
-              = image_tag 'material/item/a004.png', class: "meat", alt: "肉"
-            .newList--body
-              %h3.name
-                棒棒鶏
-              .details
-                %ul
-                  %li.foodPrice
-                    580円
-                  %li.star
-                    %i.fas.fa-star
-                      ５８０
-                .priceFurima
-                  (税込)
-        .newList
-          = link_to "#", class: "beef" do
-            %figure.newList--image
-              = image_tag 'material/item/a001.png', class: "meat", alt: "肉"
-            .newList--body
-              %h3.name
-                カレー
-              .details
-                %ul
-                  %li.foodPrice
-                    777円
-                  %li.star
-                    %i.fas.fa-star
-                      100
-                .priceFurima
-                  (税込）
+        - @items.each do |item|
+          .newList
+            = link_to item_path(item.id), class: "beef" do
+              %figure.newList--image
+                - item.images.first(1).each do |image|
+                  = image_tag image, class: "meat"
+              .newList--body
+                %h3.name
+                  = item.name
+                .details
+                  %ul
+                    %li.foodPrice
+                      = item.price
+                    %li.star
+                  .priceFurima
+                    (税込）
   %section.picupContents
     %h2.top
       ピックアップブランド
@@ -207,137 +122,24 @@
           %h3.title
             アーカイバ
       .newLists
-        .newList
-          = link_to "#", class: "beef" do
-            %figure.newList--image
-              = image_tag 'material/item/beef.jpg', class: "meat", alt: "肉"
-            .newList--body
-              %h3.name
-                ローストビーフ
-              .details
-                %ul
-                  %li.foodPrice
-                    1129円
-                  %li.star
-                    %i.fas.fa-star
-                      29
-                .priceFurima
-                  (税込）
-        .newList
-          = link_to "#", class: "beef" do
-            %figure.newList--image
-              = image_tag 'material/item/IMG_9072.jpg', class: "meat", alt: "肉"
-            .newList--body
-              %h3.name
-                もやし
-              .details
-                %ul
-                  %li.foodPrice
-                    5円
-                  %li.star
-                    %i.fas.fa-star
-                      84
-                .priceFurima
-                  (税込）
-        .newList
-          = link_to "#", class: "beef" do
-            %figure.newList--image
-              = image_tag 'material/item/a007.png', class: "meat", alt: "肉"
-            .newList--body
-              %h3.name
-                魚
-              .details
-                %ul
-                  %li.foodPrice
-                    非売品
-                  %li.star
-                    %i.fas.fa-star
-                      0
-                .priceFurima
-                  (税込)
-        .newList
-          = link_to "#", class: "beef" do
-            %figure.newList--image
-              = image_tag 'material/item/a004.png', class: "meat", alt: "肉"
-            .newList--body
-              %h3.name
-                棒棒鶏
-              .details
-                %ul
-                  %li.foodPrice
-                    580円
-                  %li.star
-                    %i.fas.fa-star
-                      580
-                .priceFurima
-                  (税込)
-        .newList
-          = link_to "#", class: "beef" do
-            %figure.newList--image
-              = image_tag 'material/item/a001.png', class: "meat", alt: "肉"
-            .newList--body
-              %h3.name
-                カレー
-              .details
-                %ul
-                  %li.foodPrice
-                    777円
-                  %li.star
-                    %i.fas.fa-star
-                      100
-                .priceFurima
-                  (税込）
+        - @items.where(brand: '近畿大学').each do |item|
+          .newList
+            = link_to item_path(item.id), class: "beef" do
+              %figure.newList--image
+                - item.images.first(1).each do |image|
+                  = image_tag image, class: "meat"
+              .newList--body
+                %h3.name
+                  = item.name
+                .details
+                  %ul
+                    %li.foodPrice
+                      = item.price
+                    %li.star
+                      -# %i.fas.fa-star
+                        -# 29
+                  .priceFurima
+                    (税込）
 
-  .footer
-    .footer__image
-      = image_tag "material/pict/bg-appBanner-pict.jpg", alt: "footer-image", class:"footer__image"
-      .footer__message
-        だれでもかんたん、人生を変えるフリマアプリ
-        %h2 今すぐ無料ダウンロード！
-      = link_to "#", class:"footer__btn" do
-        = image_tag 'material/pict/bn_app_store.png', alt: "AppStore", class:"AppStore-logo"
-      = link_to "#", class:"footer__btn" do
-        = image_tag "https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png", alt: "googleplay", class:"googleplay-logo"
-    %ul.footer__contents
-      %li.footer__contents--left
-        %h2 FURIMAについて
-        %ul.footer__content
-          %li
-            = link_to "#", class:"footer__btn" do
-              会社概要（運営会社）
-          %li
-            = link_to "#", class:"footer__btn" do
-              プライバシーポリシー
-          %li
-            = link_to "#", class:"footer__btn" do
-              FURIMA利用規約
-          %li
-            = link_to "#", class:"footer__btn" do
-              ポイントに関する特約
-      %li.footer__contents--center 
-        %h2 FURIMAを見る
-        %ul.footer__content
-          %li
-            = link_to "#", class:"footer__btn" do
-              カテゴリー一覧
-          %li
-            = link_to "#", class:"footer__btn" do
-              ブランド一覧
-      %li.footer__contents--right
-        %h2 ヘルプ＆ガイド
-        %ul.footer__content
-          %li
-            = link_to "#", class:"footer__btn" do
-              FURIMAガイド
-          %li
-            = link_to "#", class:"footer__btn" do
-              FURIMAロゴ利用ガイドライン
-          %li
-            = link_to "#", class:"footer__btn" do
-              お知らせ
-    = link_to "/", class:"root__btn" do
-      = image_tag "material/logo/logo-white.png", alt: "フリマロゴ", class: 'footer-logo'
-    ©︎FURIMA
-    .putup-btn
-      %span 出品する
-      = image_tag 'material/icon/icon_camera.png', alt: '出品マーク', height: '54px', width: '54px', class: 'putup-image'
+  = render "items/footer"
+  = render "items/putup-btn"

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AddressTest < ActiveSupport::TestCase
+class ImagesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
