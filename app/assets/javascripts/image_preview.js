@@ -6,6 +6,9 @@ $(function(){
     $.each(this.files, function(i, file){
       var fileReader = new FileReader();
       dataBox.items.add(file)
+      if(dataBox.items.length > 10){
+        return false;
+      }
       file_field.files = dataBox.files
       var num = $('.item-image').length + 1 + i
       fileReader.readAsDataURL(file);
