@@ -223,6 +223,19 @@
       border-radius: 4px;
       margin-top: 32px;
     }
+    &__edit-cancel-btn {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-top: 10px;
+      width: 240px;
+      height: 47px;
+      background-color: #ccc;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
   &__require {
     background-color: #3CCACE;
@@ -241,11 +254,5 @@
     font-size: 12px;
     margin-left: 8px;
     }
-  }
-}
-.warning {
-  margin: 0 40px 64px;
-  &__text {
-    font-size: 12px;
   }
 }
