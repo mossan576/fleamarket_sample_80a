@@ -1,0 +1,24 @@
+= render "items/header"
+.main-search
+  %section.picupContents
+    .newBox
+      .newLists
+        - @items.each do |item|
+          .newList
+            = link_to item_path(item.id), class: "beef" do
+              %figure.newList--image
+                - item.images.first(1).each do |image|
+                  = image_tag image, class: "meat"
+              .newList--body
+                %h3.name
+                  = item.name
+                .details
+                  %ul
+                    %li.foodPrice
+                      = item.price
+                    %li.star
+                  .priceFurima
+                    (税込）
+
+  = render "items/footer"
+  = render "items/putup-btn"

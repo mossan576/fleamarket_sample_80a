@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
   before_action :set_item, only: [:show, :destroy]
 
   def index
@@ -35,6 +35,10 @@ class ItemsController < ApplicationController
     else
       redirect_to item_path(@item.id), alert: 'エラーが発生しました'
     end
+  end
+
+  def search
+    @items = Item.search(params[:keyword])
   end
 
   private

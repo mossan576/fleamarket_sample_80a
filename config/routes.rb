@@ -14,8 +14,12 @@ Rails.application.routes.draw do
     end
   end 
 
-  resources:items, only: [:new, :create, :index, :show, :destroy]
-
+  resources:items, only: [:new, :create, :index, :show, :destroy] do
+    collection do
+      get 'search'
+    end
+  end
+  
   get 'transactions/buy'
   get 'transactions/done'
 end
