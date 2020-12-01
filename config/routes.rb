@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get 'items/index'
   root 'items#index'
   get 'items/new'
-  resources:users, only: [:show, :edit]
+  resources:users, only: [:show, :edit, :update] do
+    get :favorites, on: :collection
+  end
 
   resources:credit_cards, only: [:new, :show] do
     collection do
@@ -14,7 +16,9 @@ Rails.application.routes.draw do
     end
   end 
 
-  resources:items, only: [:new, :create, :index, :show, :destroy]
+  resources:items, only: [:new, :create, :index, :show, :destroy] do
+    resource :favorites, only: [:create, :destroy]
+  end
 
   get 'transactions/buy'
   get 'transactions/done'

@@ -6,8 +6,8 @@
         %h2.menu__title マイページメニュー
         .menu__list
           %ul
-            = link_to "#", class:"menu__list--btn" do
-              %li お知らせ
+            = link_to favorites_users_path, class:"menu__list--btn" do
+              %li お気に入り一覧
       .menu
         %h2.menu__title 商品を出品・購入
         .menu__list
@@ -33,6 +33,6 @@
       .content__title
         重要なお知らせ
       .content__detail
-        住所の設定をしましょう！
+        開発中です！！
   = render "items/footer"
   = render "items/putup-btn"
