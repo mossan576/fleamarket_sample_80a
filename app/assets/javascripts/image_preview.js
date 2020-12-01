@@ -1,12 +1,13 @@
 $(function(){
   var dataBox = new DataTransfer();
   var file_field = document.querySelector('input[type=file]')
+  length = $('.item_images_length').val();
   $('#item_images').change(function(){
     var files = $('input[type="file"]').prop('files')[0];
     $.each(this.files, function(i, file){
       var fileReader = new FileReader();
       dataBox.items.add(file)
-      if(dataBox.items.length > 10){
+      if(dataBox.items.length > (10 - length) ){
         return false;
       }
       file_field.files = dataBox.files

@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :destroy, :edit, :update]
 
   def index
     @items = Item.limit(5).where(buyer_id: nil).order("id DESC")
@@ -35,6 +35,31 @@ class ItemsController < ApplicationController
     else
       redirect_to item_path(@item.id), alert: 'エラーが発生しました'
     end
+  end
+
+  def edit
+    if user_signed_in? && current_user.id == @item.user_id
+      render :edit
+    else
+      redirect_to root_path, alert: 'リダイレクト elseの処理 あとで消す'
+    end
+  end
+
+  def update
+    if params[:item][:image_ids]
+      params[:item][:image_ids].each do |image_id|
+      image = @item.images.find(image_id)
+      image.purge
+      end
+      # if @item.images.presence
+      # else
+      #   return, alert: '画像は最低1枚登録してください'
+      # end
+    end
+    if (params[:item][:images]).presence
+      @item.images.attach(params[:item][:images])
+    end
+    redirect_to item_path(@item.id), notice: '編集が完了しました'
   end
 
   private

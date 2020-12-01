@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   end 
 
-  resources:items, only: [:new, :create, :index, :show, :destroy]
+  resources:items
 
   get 'transactions/buy'
   get 'transactions/done'
