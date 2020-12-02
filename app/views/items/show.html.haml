@@ -58,6 +58,10 @@
               %tr 
                 %th 発送日の目安
                 %td 1−2日で発送
+        - if user_signed_in? && current_user.id != @item.user_id
+          = link_to '商品購入画面へ進む', transactions_buy_path, class: "buy-btn" 
+        - unless user_signed_in?
+          = link_to '商品購入画面へ進む', new_user_registration_path, class: "buy-btn"
         .optionalArea
           %ul 
             %li.likeBtn
@@ -77,11 +81,13 @@
             %br 
             不快な言葉遣いなどは利用制限や退会処分となる事があります。
           %button.commentBtn{type: "submit"}
-            = icon('fas', 'comment')
-            コメントする
+            = link_to "#" do
+              = icon('fas', 'comment')
+              コメントする
       - if user_signed_in? && current_user.id == @item.user_id
-        .delete-item
-          = link_to '商品を削除する', item_path, method: :delete, data: { confirm: '本当に削除しますか？' }
+        .seller_function
+          = link_to '商品を編集する', item_path, method: :edit, class:"edit-item"
+          = link_to '商品を削除する', item_path, method: :delete, data: { confirm: '本当に削除しますか？' }, class: "delete-item"
     %ul.links 
       %li 
         = link_to "#", class:"link" do

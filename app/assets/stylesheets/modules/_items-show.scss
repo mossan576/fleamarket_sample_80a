@@ -1,20 +1,14 @@
 .main{
-  height: 2142px;
   background-color: #eeeeee;
   box-sizing: border-box;
   .showMain{
-    height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: #f8f8f8;
     .topContent{
-      width: 700px;
-      height: 1676px;
-      margin: 0 300px;
+      margin: 10px 300px;
       .itemBox{
-        height: 1330px;
         padding: 24px 40px 40px 40px;
         background-color: #ffffff;
         &__name{
@@ -26,11 +20,8 @@
         }
         &__body{
           margin: 16px 0 0 0;
-          height: 443px;
           .list{
             list-style: none;
-            height: 443px;
-            width: 620px;
             padding: 0;
             margin: 0 30px;
             li{
@@ -78,20 +69,14 @@
           line-height: 1.5;
           font-size: 18px;
           margin-bottom: 30px;
-          height: 162px;
-          width: 620px;
         }
         .table{
-          height: 400px;
-          width: 620px;
+          width: 100%;
           table{
             width: 100%;
-            height: 375px;
             border-collapse: collapse;
             border: 1px solid #f8f8f8;
             tbody{
-              height: 619px;
-              width: 430px;
               display: table-row-group;
               vertical-align: middle;
               border-color: inherit;
@@ -122,17 +107,29 @@
               }
             }
           }
-
+        }
+        .buy-btn{
+          margin: 20px auto;
+          height: 48px;
+          width: 377px;
+          padding: 1px 6px;
+          line-height: 48px;
+          background: #3CCACE;
+          border: 1px solid #3CCACE;
+          font-size: 18px;
+          border-radius: 100px;
+          text-align: center;
+          color: #ffffff;
+          display: block;
+          
         }
         .optionalArea{
           height: 48px;
-          width: 620px;
+          width: 100%;
           font-size: 14px;
           display: flex;
           justify-content: space-between;
           align-items: center;
-          box-sizing: border-box;
-          margin-top: 30px;
           ul{
             list-style: none;
             display: flex;
@@ -168,7 +165,6 @@
       }
       .commentBox{
         height: 300px;
-        width: 700px;
         padding: 24px;
         background-color: #ffffff;
         margin: 10px 0;
@@ -197,11 +193,46 @@
             line-height: 48px;
             background: #3CCACE;
             border: 1px solid #3CCACE;
-            color: #ffffff;
             font-size: 18px;
             border-radius: 100px;
             margin-top: 20px;
+            a{
+              color: #ffffff;
+            }
           }
+        }
+      }
+      .seller_function{
+        height: 150px;
+        margin: 0 190px;
+        .edit-item{
+          height: 48px;
+          width: 377px;
+          padding: 1px 6px;
+          line-height: 48px;
+          background: #3CCACE;
+          border: 1px solid #3CCACE;
+          font-size: 18px;
+          border-radius: 100px;
+          margin-top: 20px;
+          text-align: center;
+          color: #ffffff;
+          display: block;
+          
+        }
+        .delete-item{
+          height: 48px;
+          width: 377px;
+          padding: 1px 6px;
+          line-height: 48px;
+          background: #dedede;
+          border: 1px solid #dedede;
+          font-size: 18px;
+          border-radius: 100px;
+          margin-top: 20px;
+          text-align: center;
+          color: #ffffff;
+          display: block;
         }
       }
     }
