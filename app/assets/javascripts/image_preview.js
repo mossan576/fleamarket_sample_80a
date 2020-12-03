@@ -7,7 +7,7 @@ $(function(){
     $.each(this.files, function(i, file){
       var fileReader = new FileReader();
       dataBox.items.add(file)
-      if(dataBox.items.length > (10 - length) ){
+      if(dataBox.items.length > (20 - length) ){
         return false;
       }
       file_field.files = dataBox.files
