@@ -41,25 +41,21 @@ class ItemsController < ApplicationController
     if user_signed_in? && current_user.id == @item.user_id
       render :edit
     else
-      redirect_to root_path, alert: 'リダイレクト elseの処理 あとで消す'
+      redirect_to root_path
     end
   end
 
   def update
-    if params[:item][:image_ids]
-      params[:item][:image_ids].each do |image_id|
-      image = @item.images.find(image_id)
-      image.purge
+    edit_images
+    if @item.images.length <= 10 && @item.images.length > 0
+      if @item.update(item_params)
+        redirect_to item_path(@item.id), notice: '編集が完了しました'
+      else
+        redirect_to edit_item_path, alert: '必須項目を入力してください'
       end
-      # if @item.images.presence
-      # else
-      #   return, alert: '画像は最低1枚登録してください'
-      # end
+    else
+      redirect_to edit_item_path, alert: '画像は1枚以上10枚以下です'
     end
-    if (params[:item][:images]).presence
-      @item.images.attach(params[:item][:images])
-    end
-    redirect_to item_path(@item.id), notice: '編集が完了しました'
   end
 
   private
@@ -69,6 +65,26 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def edit_images
+    delete_images
+    add_images
+  end
+
+  def delete_images
+    if params[:item][:image_ids]
+      params[:item][:image_ids].each do |image_id|
+        image = @item.images.find(image_id)
+        image.purge
+      end
+    end
+
+    def add_images
+      if (params[:item][:images]).presence
+        @item.images.attach(params[:item][:images])
+      end
+    end
   end
 
 end
