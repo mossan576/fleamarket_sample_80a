@@ -3,12 +3,13 @@
   .showMain
     .topContent
       .itemBox
-        %h2.itemBox__name aaa
+        %h2.itemBox__name 
+          = @item.name
         .itemBox__body
           %ul.list
             %li
               -# ~~~~~~~~~~~~~ 完成したら消す ~~~~~~~~~~~~~~~~
-              - @item.images.each do |image|
+              - @item.images.first(10).each do |image|
                 = image_tag image, class: "meat", width: "200px"
               -# ~~~~~↑↑↑↑↑↑ 完成したら消す ~~~~~ ↓↓↓↓↓↓↓↓↓完成したら戻す~~~~~~~~
               -# = image_tag "material/item/a001.jpg", class:"img_1"
