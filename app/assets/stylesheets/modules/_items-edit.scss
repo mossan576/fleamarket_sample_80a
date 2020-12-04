@@ -1,0 +1,80 @@
+.sell-box__edit-title {
+  height: 50px;
+  font-weight: 600;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-image-edit__content--icon{
+  margin-bottom: 22px;
+}
+
+input[type=checkbox]{
+  display: none;
+}
+
+.delete_check_box{
+  border: 1px solid #888888;
+  text-align: center;
+  width: 114px;
+  color: blue;
+  cursor: pointer;
+  padding: 0 40px;
+}
+
+input[type=checkbox]:checked + label {
+  background: #31A9EE;
+  color: #ffffff;
+}
+
+.delete_check_box:hover {
+  background-color: #E2EDF9;
+}
+  
+
+.edit-preview{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: start;
+  .item-image-edit{
+    padding-bottom: 15px;
+    height: 150px;
+    width: 114px;
+    margin-right: 10px;
+    margin-bottom: 24px;
+    &__content{
+      height: 120px;
+      background-color: #F5F5F5;
+      padding: 20px 0;
+    }
+    &__operation{
+      border: 1px solid #888888;
+      text-align: center;
+      width: 114px;
+      color: blue;
+      cursor: pointer;
+    }
+  }
+}
+
+.sell-box__actions__submit-btn{
+  cursor: pointer;
+}
+
+.sell-box__actions__back-btn{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 10px;
+  width: 240px;
+  height: 47px;
+  background-color: #ccc;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
