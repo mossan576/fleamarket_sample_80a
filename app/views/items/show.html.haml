@@ -81,7 +81,7 @@
           %button.commentBtn{type: "submit"}
             = icon('fas', 'comment')
             コメントする
-      - if user_signed_in? && current_user.id == @item.user_id
+    - if user_signed_in? && current_user.id == @item.user_id
       .edit-item
         = link_to '商品を編集する', edit_item_path(@item.id), method: :get
       .delete-item
