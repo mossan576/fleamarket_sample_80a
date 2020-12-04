@@ -11,13 +11,14 @@
                 出品画像
                 %span.sell-box__require 必須
               .sell-box__image-frame__guide 最大10枚までアップロードできます
-              #image-box-1
-                .item-num-0#image-box__container
-                  .sell-box__upload
-                    .sell-box__upload__image
-                      = f.label :images ,class: "sell-box__upload__add-image" do
-                        = icon('fas','camera', class: "camera-icon")
-                        = f.file_field :images, multiple: true,type: 'file', value:"",class: "Hidden"
+              .sell-box__upload
+                .sell-box__upload__image
+                  = f.label :images ,class: "sell-box__upload__add-image" do
+                    = icon('fas','camera', class: "camera-icon")
+                    = f.file_field :images, multiple: true, class: 'Hidden'
+                .sell-box__upload__text
+                  ドラッグアンドドロップ
+                  %br またはクリックしてファイルをアップロード
             .sell-box__item
               .sell-box__item__title-area
               .sell-box__item__name
