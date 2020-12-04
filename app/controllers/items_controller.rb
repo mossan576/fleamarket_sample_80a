@@ -48,7 +48,7 @@ class ItemsController < ApplicationController
   def update
     edit_images
     if @item.images.length <= 10 && @item.images.length > 0
-      if @item.update(item_params)
+      if @item.update(update_params)
         redirect_to item_path(@item.id), notice: '編集が完了しました'
       else
         redirect_to edit_item_path, alert: '必須項目を入力してください'
@@ -61,6 +61,10 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name, :description, :status, :freight, :shipment_source, :ship_date, :price, :brand, :size, :buyer_id, :category_id, images: []).merge(user_id: current_user.id)
+  end
+
+  def update_params
+    params.require(:item).permit(:name, :description, :status, :freight, :shipment_source, :ship_date, :price, :brand, :size, :buyer_id, :category_id)
   end
 
   def set_item
@@ -79,12 +83,13 @@ class ItemsController < ApplicationController
         image.purge
       end
     end
+  end
 
-    def add_images
-      if (params[:item][:images]).presence
-        @item.images.attach(params[:item][:images])
-      end
+  def add_images
+    if (params[:item][:images]).presence
+      @item.images.attach(params[:item][:images])
     end
   end
+  
 
 end
