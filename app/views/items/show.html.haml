@@ -3,13 +3,11 @@
   .showMain
     .topContent
       .itemBox
-        %h2.itemBox__name 
-          = @item.name
+        %h2.itemBox__name aaa
         .itemBox__body
           %ul.list
             %li
-              - @item.images.first(10).each do |image|
-                = image_tag image, class: "meat", width: "200px"
+              = image_tag "material/item/a001.jpg", class:"img_1"
               %ul.list2
                 %li.li-2
                   = image_tag "material/item/a001.jpg", class:"img_2"
@@ -81,11 +79,9 @@
           %button.commentBtn{type: "submit"}
             = icon('fas', 'comment')
             コメントする
-    - if user_signed_in? && current_user.id == @item.user_id
-      .edit-item
-        = link_to '商品を編集する', edit_item_path(@item.id), method: :get
-      .delete-item
-        = link_to '商品を削除する', item_path, method: :delete, data: { confirm: '本当に削除しますか？' }
+      - if user_signed_in? && current_user.id == @item.user_id
+        .delete-item
+          = link_to '商品を削除する', item_path, method: :delete, data: { confirm: '本当に削除しますか？' }
     %ul.links 
       %li 
         = link_to "#", class:"link" do
