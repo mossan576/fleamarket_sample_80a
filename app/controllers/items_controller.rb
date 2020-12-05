@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
   before_action :set_item, only: [:show, :destroy, :edit, :update]
+  before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
 
   def index
     @items = Item.limit(5).where(buyer_id: nil).order("id DESC")
@@ -58,7 +59,19 @@ class ItemsController < ApplicationController
     end
   end
 
+  def get_category_children
+    @category_children = Category.find(params[:parent_name]).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
   private
+  def set_category  
+    @category_parent_array = Category.where(ancestry: nil)
+  end
+
   def item_params
     params.require(:item).permit(:name, :description, :status, :freight, :shipment_source, :ship_date, :price, :brand, :size, :buyer_id, :category_id, images: []).merge(user_id: current_user.id)
   end
