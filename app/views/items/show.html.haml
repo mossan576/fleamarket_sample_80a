@@ -67,7 +67,7 @@
                 %td
                   = @item.ship_date
         - if user_signed_in? && current_user.id != @item.user_id
-          = link_to '商品購入画面へ進む', transactions_buy_path, class: "buy-btn" 
+          = link_to '商品購入画面へ進む', transactions_buy_item_path, class: "buy-btn" 
         - unless user_signed_in?
           = link_to '商品購入画面へ進む', new_user_registration_path, class: "buy-btn"
         .optionalArea
@@ -110,8 +110,8 @@
       = link_to item_path, class: "relatedItems_bar" do
         = @item.category.name
         をもっと見る
-      = link_to item_path(2), class:"productList" do
-        - @related_items.images.each do |image|
+      = link_to item_path(@related_items.id), class:"productList" do
+        - @related_items.images.first(1).each do |image|
           .relatedProduct
             = image_tag @related_items.images.first, class:"productList_image"
             -if @item.buyer_id.present?

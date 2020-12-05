@@ -24,8 +24,8 @@
             list-style: none;
             padding: 0;
             margin: 0 30px;
-            overflow: hidden;
             position: relative;
+            overflow: hidden;
             .img_1{
               height: 346px;
               width: 560px;
@@ -262,12 +262,9 @@
         width: 200px;
         height: 250px;
         float: left;
-        width: 235px;
-        height: 277px;
-        display: block;
-        overflow: hidden;
-        // position: relative;
         background-color: #ffffff;
+        position: relative;
+        overflow: hidden;
         .productList_image{
           height: 150px;
           width: 100%;
