@@ -322,3 +322,24 @@
       }
     }
   }
+
+.sold-items {
+  // position: absolute;
+  height: 90px;
+  width: 170px;
+  z-index: 1;
+  background-color: #3ccace;
+  font-weight: bold;
+  transform: rotate(-45deg);
+  margin:-25px 0px 0px -60px;
+  // display: block;
+  overflow: hidden;
+  &__title {
+    font-size: 24px;
+    margin:55px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    letter-spacing: 2px;
+  }
+}

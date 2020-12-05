@@ -8,8 +8,11 @@
         .itemBox__body
           %ul.list
             %li
-              - @item.images.first(10).each do |image|
-                = image_tag image, class: "meat", width: "200px"
+              - @item.images.first(1).each do |image|
+                = image_tag image, class: "img_1", width: "200px"
+                .sold-items2
+                  .sold-items2__title
+                    SOLD
               %ul.list2
                 %li.li-2
                   = image_tag "material/item/a001.jpg", class:"img_2"
@@ -102,6 +105,9 @@
       = link_to "#", class:"productList" do
         .relatedProduct
           = image_tag "material/item/beef.jpg", class:"productList_image"
+          .sold-items2
+            .sold-items2__title
+              SOLD
           .productList_body
             %h3.name product1
             .details

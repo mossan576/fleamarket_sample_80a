@@ -27,6 +27,7 @@
         &__body{
           margin: 16px 0 0 0;
           height: 443px;
+          z-index: 10;
           .list{
             list-style: none;
             height: 443px;
@@ -35,9 +36,18 @@
             margin: 0 30px;
             li{
               list-style: none;
+              // display: block;
+              // overflow: hidden;
+              position: relative;
+              z-index: auto;
               .img_1{
                 height: 346px;
                 width: 560px;
+                z-index: auto;
+                // position: relative;
+                // position: absolute;
+                // display: block;
+                // overflow: hidden;
               }
               .list2{
                 height: 87px;
@@ -239,6 +249,7 @@
         .productList_image{
           height: 150px;
           width: 220px;
+          // position: relative;
         }
         .productList_body{
           height: 95px;
@@ -264,3 +275,55 @@
     }
   }
 } 
+
+.relatedProduct{
+  z-index: auto;
+  position: relative;
+  display: inline-block;
+  width: 200;
+}
+
+.sold-items2 {
+  position: absolute;
+  height: 90px;
+  width: 170px;
+  z-index: auto;
+  background-color: #3ccace;
+  font-weight: bold;
+  transform: rotate(-45deg);
+  margin:-25px 0px 0px -60px;
+  display: block;
+  overflow: hidden;
+  top: 0;
+  &__title {
+    font-size: 24px;
+    margin:55px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    letter-spacing: 2px;
+  }
+}
+
+// .sold-items2{
+//   width: 0;
+//   height: 0;
+//   border-top: 60px solid green ;
+//   border-right: 60px solid transparent;
+//   border-bottom: 60px solid transparent;
+//   border-left: 60px solid green ;
+//   z-index:100;
+//   // position: relative;
+//   position: absolute;
+//   top: 0;
+//   // top: -156px;
+//   &__title{
+//     transform: rotate(-45deg);
+//     font-size: 24px;
+//     // margin:-133px 0px 0px -55px;
+//     margin: -22px 0px 0px -44px;
+//     color: #fff;
+//     letter-spacing: 2px;
+//     font-weight: bold;
+//   }
+// }

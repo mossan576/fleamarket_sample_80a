@@ -103,6 +103,11 @@
               %figure.newList--image
                 - item.images.first(1).each do |image|
                   = image_tag image, class: "meat"
+                  -# -if item.buyer_id.present?
+                  .sold-itemss
+                    .sold-itemss__title
+                      SOLD
+
               .newList--body
                 %h3.name
                   = item.name
@@ -128,6 +133,11 @@
               %figure.newList--image
                 - item.images.first(1).each do |image|
                   = image_tag image, class: "meat"
+                  -# -if item.buyer_id.present?
+                  .sold-items
+                    .sold-items__title
+                      SOLD
+
               .newList--body
                 %h3.name
                   = item.name
