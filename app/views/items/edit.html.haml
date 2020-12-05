@@ -6,11 +6,20 @@
       .sell-box
         = form_with model: @item, local: true do |f|
           .sell-box__sell-form
+            .sell-box__edit-title 商品を編集してください
             .sell-box__image-frame
               .sell-box__image-frame__title
                 出品画像
                 %span.sell-box__require 必須
               .sell-box__image-frame__guide 最大10枚までアップロードできます
+              %input{name: "item_images_length", type: "hidden", value: @item.images.length, class: 'item_images_length'}/
+              .edit-preview
+                - @item.images.each do |image|
+                  .item-image-edit
+                    .item-image-edit__content
+                      = image_tag image, class: "item-image-edit__content--icon", width: "114px", height: "76px"
+                      = f.check_box :image_ids, {multiple: true}, image.id, false
+                      %label.delete_check_box(for="item_image_ids_#{image.id}") 削除
               #image-box-1
                 .item-num-0#image-box__container
                   .sell-box__upload
@@ -39,10 +48,10 @@
                 %br
                 = f.select :category_id ,[["選択してください", ""],["メンズ", 1], ["レディース", 2], ["キッズ", 3]], {},class: "sell-box__detail__form"
                 %br/
-                
+
                 = f.select :childCategory ,[["選択してください", ""],["トップス", 1], ["ボトムス", 2], ["シューズ", 3]], {},class: "sell-box__detail__form"
                 %br/
-                
+
                 = f.select :grandchildCategory ,[["選択してください", ""],["Tシャツ", 1], ["シャツ", 2], ["パーカー", 3]], {},class: "sell-box__detail__form"
                 .sell-box__detail__size
                 = f.label :サイズ ,class: "sell-box__detai__size"
@@ -90,17 +99,18 @@
                 .sell-box__profit__text 販売利益
                 .sell-box__profit__sum ー
             .sell-box__actions
-              = f.submit "出品する",class: 'sell-box__actions__submit-btn'
+              = f.submit "編集を確定する",class: 'sell-box__actions__submit-btn'
               %br
-              = link_to root_path,class: "sell-box__actions__back-btn" do
-                もどる
+              - if @item.images.length <= 10 && @item.images.length > 0
+                = link_to item_path,class: "sell-box__actions__back-btn" do
+                  キャンセル
           .warning
             .warning__text
               禁止されている行為および出品物を必ずご確認ください。
               偽ブランド品や盗品物などの販売は犯罪であり、
               法律により処罰される可能性があります。 
               また、出品をもちまして加盟店規約に同意したことになります。
-            
+
     .Footer
       = image_tag "material/logo/logo.png", alt: "フリマロゴ", class: "logo"
-      .Foote__text © FURIMA
+      .Foote__text © FURIMA 
