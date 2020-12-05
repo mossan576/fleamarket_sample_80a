@@ -37,21 +37,24 @@
               .sell-box__detail__category
                 = f.label :カテゴリー ,class: "sell-box__detail__category"
                 %span.sell-box__require 必須
-                %br
-                = f.select :category_id ,[["選択してください", ""],["メンズ", 1], ["レディース", 2], ["キッズ", 3]], {},class: "sell-box__detail__form"
-                %br/
+                .sell-box__detail__choose
+                  = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
+                -#  %br
+                -#  = f.select :category_id ,[["選択してください", ""],["メンズ", 1], ["レディース", 2], ["キッズ", 3]], {},class: "sell-box__detail__form"
+                -#  %br/
                 
-                = f.select :childCategory ,[["選択してください", ""],["トップス", 1], ["ボトムス", 2], ["シューズ", 3]], {},class: "sell-box__detail__form"
-                %br/
+                -#  = f.select :childCategory ,[["選択してください", ""],["トップス", 1], ["ボトムス", 2], ["シューズ", 3]], {},class: "sell-box__detail__form"
+                -#  %br/
                 
-                = f.select :grandchildCategory ,[["選択してください", ""],["Tシャツ", 1], ["シャツ", 2], ["パーカー", 3]], {},class: "sell-box__detail__form"
+                -#  = f.select :grandchildCategory ,[["選択してください", ""],["Tシャツ", 1], ["シャツ", 2], ["パーカー", 3]], {},class: "sell-box__detail__form"
+                
                 .sell-box__detail__size
                 = f.label :サイズ ,class: "sell-box__detai__size"
                 %span.sell-box__require--any 任意
                 %br
                 = f.select :size ,[["選択してください", ""],["XXS以下", "XXS以下"], ["XS(SS)", "XS(SS)"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL(LL)", "XL(LL)"], ["2XL(3L)", "2XL(3L)"], ["3XL(4L)", "3XL(4L)"], ["4XL(5L)", "4XL(5L)"], ["FREE SIZE", "FREE SIZE"]], {},class: "sell-box__detail__form"
               .sell-box__detail__brand
-                = f.label :ブランド ,class: "sell-box__detail__brand"
+                = f.label :ブランド ,class: " sell-box__detail__brand"
                 %span.sell-box__require--any 任意
                 %br
                 = f.text_field :brand ,class: "sell-box__detail__form", placeholder: " 例）シャネル"

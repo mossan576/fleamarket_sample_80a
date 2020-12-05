@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :destroy, :edit, :update]
 
   def index
     @items = Item.limit(5).where(buyer_id: nil).order("id DESC")
@@ -16,6 +16,8 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @category_parent_array = ["---"]
+    @category_parent_array = Category.where(ancestry: nil)
   end
 
   def create
@@ -47,4 +49,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def get_category_children
+    @category_children = Category.find(params[:parent_id]).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find(params[:child_id]).children
+  end
 end
