@@ -1,8 +1,8 @@
 class TransactionsController < ApplicationController
-  
+  before_action :set_item, only: [:buy, :done]
+
   def buy
     credit_card = CreditCard.where(user_id: current_user.id).first
-    @item = Item.find(1)
     if credit_card.blank?
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
@@ -12,7 +12,6 @@ class TransactionsController < ApplicationController
   end
 
   def done
-    @item = Item.find(1)
     card = current_user.credit_card
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     Payjp::Charge.create(
@@ -28,4 +27,10 @@ class TransactionsController < ApplicationController
     end
   end
 
+  private
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+  
 end

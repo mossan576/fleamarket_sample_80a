@@ -20,7 +20,7 @@
             %input{ type: "hidden", name: "card_id", value: ""}
             %button.Card-info__btns--delete-btn 削除する
 
-          = link_to user_path,class: "Card-info__btns--mypage-btn" do
+          = link_to user_path(current_user.id),class: "Card-info__btns--mypage-btn" do
             マイページに戻る
 
     .Footer

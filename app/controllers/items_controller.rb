@@ -29,6 +29,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @related_items = Item.find(params[:id])
   end
 
   def destroy
