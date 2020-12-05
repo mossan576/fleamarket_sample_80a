@@ -63,7 +63,7 @@
                 %td
                   = @item.ship_date
         - if user_signed_in? && current_user.id != @item.user_id
-          = link_to '商品購入画面へ進む', transactions_buy_path, class: "buy-btn" 
+          = link_to '商品購入画面へ進む', transactions_buy_item_path, class: "buy-btn" 
         - unless user_signed_in?
           = link_to '商品購入画面へ進む', new_user_registration_path, class: "buy-btn"
         .optionalArea

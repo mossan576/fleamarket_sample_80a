@@ -18,8 +18,9 @@ Rails.application.routes.draw do
 
   resources:items do
     resource :favorites, only: [:create, :destroy]
+    member do
+      get 'transactions/buy'
+      get 'transactions/done'
+    end
   end
-
-  get 'transactions/buy'
-  get 'transactions/done'
 end
