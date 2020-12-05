@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.limit(5).where(buyer_id: nil).order("id DESC")
     @categories = Category.all
+    @favorites = Favorite.all
   end
 
   def move_to_index

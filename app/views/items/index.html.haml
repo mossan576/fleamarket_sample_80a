@@ -116,6 +116,8 @@
                     %li.foodPrice
                       = item.price
                     %li.star
+                      %i.fas.fa-star
+                        = item.favorites.count
                   .priceFurima
                     (税込）
   %section.picupContents
@@ -146,7 +148,8 @@
                     %li.foodPrice
                       = item.price
                     %li.star
-                      -# %i.fas.fa-star
+                      %i.fas.fa-star
+                        = item.favorites.count
                         -# 29
                   .priceFurima
                     (税込）
