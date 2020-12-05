@@ -103,10 +103,10 @@
               %figure.newList--image
                 - item.images.first(1).each do |image|
                   = image_tag image, class: "meat"
-                  -# -if item.buyer_id.present?
-                  .sold-label-S
-                    .sold-label-S__title
-                      SOLD
+                  -if item.buyer_id.present?
+                    .sold-label-S
+                      .sold-label-S__title
+                        SOLD
 
               .newList--body
                 %h3.name
@@ -135,10 +135,10 @@
               %figure.newList--image
                 - item.images.first(1).each do |image|
                   = image_tag image, class: "meat"
-                  -# -if item.buyer_id.present?
-                  .sold-label-S
-                    .sold-label-S__title
-                      SOLD
+                  -if item.buyer_id.present?
+                    .sold-label-S
+                      .sold-label-S__title
+                        SOLD
 
               .newList--body
                 %h3.name

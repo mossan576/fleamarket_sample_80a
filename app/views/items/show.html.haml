@@ -10,10 +10,10 @@
             %li
               - @item.images.first(1).each do |image|
                 = image_tag image, class: "img_1", width: "200px"
-                -# -if item.buyer_id.present?
-                .sold-label-L
-                  .sold-label-L__title
-                    SOLD
+                -if @item.buyer_id.present?
+                  .sold-label-L
+                    .sold-label-L__title
+                      SOLD
               %ul.list2
                 %li.li-2
                   = image_tag "material/item/a001.jpg", class:"img_2"
@@ -105,10 +105,10 @@
       = link_to "#", class:"productList" do
         .relatedProduct
           = image_tag "material/item/beef.jpg", class:"productList_image"
-          -# -if item.buyer_id.present?
-          .sold-label-S
-            .sold-label-S__title
-              SOLD
+          -if @item.buyer_id.present?
+            .sold-label-S
+              .sold-label-S__title
+                SOLD
           .productList_body
             %h3.name product1
             .details
