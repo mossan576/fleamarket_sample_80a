@@ -75,8 +75,8 @@ gem 'devise'
 gem 'rails-i18n'
 gem 'font-awesome-sass'
 gem 'active_hash'
-gem 'ancestry'
 gem "aws-sdk-s3", require: false
 gem 'payjp'
 gem "jquery-rails"
 gem 'dotenv-rails'
+gem 'ancestry'
