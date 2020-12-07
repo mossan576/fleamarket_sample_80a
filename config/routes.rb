@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources:users, only: [:show, :edit, :update] do
     get :favorites, on: :collection
   end
+  
   resources:credit_cards, only: [:new, :show] do
     collection do
       post 'show', to: 'credit_cards#show'
