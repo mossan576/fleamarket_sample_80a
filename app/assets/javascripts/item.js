@@ -23,7 +23,7 @@ function appendGrandchildrenBox(insertHTML) {
 }
 
 $(document).on("change","#parent_category", function() {
-  //選択された親カテゴリーの名前取得 → コントローラーに送る
+
   let parentCategory =  $("#parent_category").val();
   if (parentCategory != "") {
     $.ajax( {
@@ -33,7 +33,6 @@ $(document).on("change","#parent_category", function() {
       dataType: 'json'
     })
     .done(function(children) {
-      //親カテゴリーが変更されたら、子/孫カテゴリー、サイズを削除し、初期値にする
       $("#children_box").empty();
       $("#grandchildren_box").empty();
       $('.size_box').val('');
@@ -56,9 +55,9 @@ $(document).on("change","#parent_category", function() {
 });
 
 $(document).on('change', '#children_box', function() {
-  //選択された子カテゴリーidを取得
+
   let childId = $('#children_category option:selected').data('category');
-  //子カテゴリーが初期値でない場合
+
   if (childId != ""){
     $.ajax({
       url: 'get_category_grandchildren',
