@@ -28,6 +28,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @related_items = Item.find(params[:id])
   end
 
   def destroy
@@ -103,6 +104,5 @@ class ItemsController < ApplicationController
       @item.images.attach(params[:item][:images])
     end
   end
-
 
 end

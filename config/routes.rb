@@ -25,9 +25,8 @@ Rails.application.routes.draw do
     member do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'transactions/buy'
+      get 'transactions/done'
     end
   end
-
-  get 'transactions/buy'
-  get 'transactions/done'
 end

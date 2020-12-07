@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   has_many_attached :images
-  belongs_to :user
+  belongs_to :user, optional: true
+  has_many :favorites, dependent: :destroy 
   belongs_to :category
   
   with_options presence: true do
