@@ -115,9 +115,7 @@
           .relatedProduct
             = image_tag @related_items.images.first, class:"productList_image"
             -if @item.buyer_id.present?
-              .sold-label-S
-                .sold-label-S__title
-                  SOLD
+              = render "items/sold-label-S"
             .productList_body
               %h3.name 
                 = @related_items.name

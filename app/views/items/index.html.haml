@@ -104,9 +104,7 @@
                 - item.images.first(1).each do |image|
                   = image_tag image, class: "meat"
                   -if item.buyer_id.present?
-                    .sold-label-S
-                      .sold-label-S__title
-                        SOLD
+                    = render "items/sold-label-S"
 
               .newList--body
                 %h3.name
@@ -136,10 +134,7 @@
                 - item.images.first(1).each do |image|
                   = image_tag image, class: "meat"
                   -if item.buyer_id.present?
-                    .sold-label-S
-                      .sold-label-S__title
-                        SOLD
-
+                    = render "items/sold-label-S"
               .newList--body
                 %h3.name
                   = item.name
@@ -150,7 +145,6 @@
                     %li.star
                       %i.fas.fa-star
                         = item.favorites.count
-                        -# 29
                   .priceFurima
                     (税込）
 
