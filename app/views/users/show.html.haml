@@ -16,8 +16,8 @@
           %ul
             = link_to new_item_path, class:"menu__list--btn" do
               %li 商品を出品する
-            = link_to "#", class:"menu__list--btn" do
-              %li 購入した商品
+            = link_to listed_items_users_path, class:"menu__list--btn" do
+              %li 出品した商品
       .menu
         %h2.menu__title 設定・その他
         .menu__list

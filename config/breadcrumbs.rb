@@ -11,6 +11,11 @@ crumb :favorite do
   parent :mypage
 end
 
+crumb :listed_items do
+  link "出品した商品一覧", listed_items_users_path
+  parent :mypage
+end 
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
