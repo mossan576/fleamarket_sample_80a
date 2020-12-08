@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'items/new'
   resources:users, only: [:show, :edit, :update] do
     get :favorites, on: :collection
+    get :listed_items, on: :collection
+    get :purchased_items, on: :collection
   end
   
   resources:credit_cards, only: [:new, :show] do

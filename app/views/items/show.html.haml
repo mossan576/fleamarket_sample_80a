@@ -9,6 +9,10 @@
           .image_first
             - @item.images.first(1).each do |image|
               = image_tag image, alt: "商品画像", class: "img_1"
+              -if @item.buyer_id.present?
+                .sold-label-L
+                  .sold-label-L__title
+                    SOLD
               .image_list
                 -@item.images.each do |image|
                   = image_tag image, alt:"商品画像", class: "images"
@@ -110,6 +114,8 @@
         - @related_items.images.first(1).each do |image|
           .relatedProduct
             = image_tag @related_items.images.first, class:"productList_image"
+            -if @item.buyer_id.present?
+              = render "items/sold-label-S"
             .productList_body
               %h3.name 
                 = @related_items.name
@@ -120,7 +126,7 @@
                     円
                   %li 
                     = icon('fas','star')
-                    1
+                    = @item.favorites.count
                 (税込)
   = render "items/footer"
   = render "items/putup-btn" 

@@ -103,6 +103,9 @@
               %figure.newList--image
                 - item.images.first(1).each do |image|
                   = image_tag image, class: "meat"
+                  -if item.buyer_id.present?
+                    = render "items/sold-label-S"
+
               .newList--body
                 %h3.name
                   = item.name
@@ -111,6 +114,8 @@
                     %li.foodPrice
                       = item.price
                     %li.star
+                      %i.fas.fa-star
+                        = item.favorites.count
                   .priceFurima
                     (税込）
   %section.picupContents
@@ -128,6 +133,8 @@
               %figure.newList--image
                 - item.images.first(1).each do |image|
                   = image_tag image, class: "meat"
+                  -if item.buyer_id.present?
+                    = render "items/sold-label-S"
               .newList--body
                 %h3.name
                   = item.name
@@ -136,8 +143,8 @@
                     %li.foodPrice
                       = item.price
                     %li.star
-                      -# %i.fas.fa-star
-                        -# 29
+                      %i.fas.fa-star
+                        = item.favorites.count
                   .priceFurima
                     (税込）
 
