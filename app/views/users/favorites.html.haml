@@ -1,9 +1,11 @@
 = render "items/header"
+- breadcrumb :favorite
+= render "layouts/breadcrumbs"
 .main-search
-  %section.picupContents
+  %section.mypage-picupContents
     .favorite-title お気に入り一覧
     .newBox
-      .newLists
+      .listed_items
         - if @favorite_list.present?
           - @favorite_list.each do |item|
             .newList
