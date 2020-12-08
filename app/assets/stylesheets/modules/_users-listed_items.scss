@@ -16,6 +16,11 @@
   .newList{
     width: auto;
     margin-bottom: 20px;
-    border: solid 1px gray;
   }
+}
+
+.listed_items::after{
+  display: block;
+  content:"";
+  width: 220px;
 }

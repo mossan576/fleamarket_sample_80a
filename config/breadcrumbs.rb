@@ -16,6 +16,10 @@ crumb :listed_items do
   parent :mypage
 end 
 
+crumb :purchased_items do
+  link "購入した商品一覧", purchased_items_users_path
+  parent :mypage
+end 
 # crumb :projects do
 #   link "Projects", projects_path
 # end
