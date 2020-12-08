@@ -39,13 +39,14 @@
                 = f.label :カテゴリー ,class: "sell-box__detail__category"
                 %span.sell-box__require 必須
                 %br
-                = f.select :category_id ,[["選択してください", ""],["メンズ", 1], ["レディース", 2], ["キッズ", 3]], {},class: "sell-box__detail__form"
-                %br/
-                
-                = f.select :childCategory ,[["選択してください", ""],["トップス", 1], ["ボトムス", 2], ["シューズ", 3]], {},class: "sell-box__detail__form"
-                %br/
-                
-                = f.select :grandchildCategory ,[["選択してください", ""],["Tシャツ", 1], ["シャツ", 2], ["パーカー", 3]], {},class: "sell-box__detail__form"
+                .item_input__body__category#category_box
+                  .pulldown#partent_box
+                    = f.select :category_id, options_for_select( @category_parent_array.map{|c| [c[:name], c[:id]]}),{include_blank: "選択してください"}, { class: "parent_category_box", id: "parent_category"}
+
+                  .pulldown.item_input__body__category__children#children_box
+
+                  .pulldown.item_input__body__category__grandchildren#grandchildren_box
+
                 .sell-box__detail__size
                 = f.label :サイズ ,class: "sell-box__detai__size"
                 %span.sell-box__require--any 任意

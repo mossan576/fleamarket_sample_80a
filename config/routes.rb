@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get :listed_items, on: :collection
     get :purchased_items, on: :collection
   end
-
+  
   resources:credit_cards, only: [:new, :show] do
     collection do
       post 'show', to: 'credit_cards#show'
@@ -20,7 +20,13 @@ Rails.application.routes.draw do
 
   resources:items do
     resource :favorites, only: [:create, :destroy]
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
     member do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'transactions/buy'
       get 'transactions/done'
     end

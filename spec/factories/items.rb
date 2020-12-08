@@ -1,5 +1,4 @@
 FactoryBot.define do
-  
   factory :item do
     name             {"test"}
     description      {"説明"}
@@ -13,5 +12,4 @@ FactoryBot.define do
     user_id          {"1"}
     category_id      {"1"}
   end
-  
 end
