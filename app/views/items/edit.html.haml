@@ -39,7 +39,9 @@
                 %span.sell-box__require 必須
                 %br
                 = f.text_area :description, class: "sell-box__item__description-form", placeholder: "商品の説明（必須 1,000文字以内） &#13;&#10;（色、素材、重さ、定価、注意点など） &#13;&#10; &#13;&#10;例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。".html_safe, maxlength:"1000"
-              .sell-box__item__word-counter 0/1000
+                .sell-box__item__word-counter
+                  %span.numerator 0
+                  %span.denominator /1000
             .sell-box__detail
               .sell-box__detail__title 商品詳細
               .sell-box__detail__category

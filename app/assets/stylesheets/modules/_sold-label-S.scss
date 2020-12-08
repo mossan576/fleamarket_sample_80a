@@ -1,0 +1,25 @@
+.sold-label-S {
+  position: absolute;
+  height: 90px;
+  width: 170px;
+  z-index: auto;
+  background-color: #3ccace;
+  font-weight: bold;
+  transform: rotate(-45deg);
+  margin:-25px 0px 0px -60px;
+  display: block;
+  overflow: hidden;
+  top: 0;
+  &__title {
+    font-size: 24px;
+    margin:55px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    letter-spacing: 2px;
+  }
+}
+// ラベルがはみ出る場合は親クラスに対して
+// position: relative;
+// overflow: hidden;
+// を指定

@@ -3,8 +3,9 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy, :edit, :update]
 
   def index
-    @items = Item.limit(5).where(buyer_id: nil).order("id DESC")
+    @items = Item.limit(5).order("id DESC")
     @categories = Category.all
+    @favorites = Favorite.all
   end
 
   def move_to_index
