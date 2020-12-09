@@ -30,6 +30,7 @@ class ItemsController < ApplicationController
 
   def show
     @related_items = Item.find(params[:id])
+    @category_id = @item.category_id
     @category_grandchild = Category.find(@category_id)
     @category_child = @category_grandchild.parent
     @category_parent = @category_child.parent
