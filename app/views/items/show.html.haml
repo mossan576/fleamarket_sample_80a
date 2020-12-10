@@ -22,7 +22,8 @@
           円
           .itemBox__price_detail
             %span (税込)
-            %span 送料込み
+            %span.show-freight
+              = @item.freight
         .itemDetail 
           = @item.description
         .table
