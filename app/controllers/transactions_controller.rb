@@ -1,5 +1,5 @@
 class TransactionsController < ApplicationController
-  before_action :set_item, only: [:buy, :done]
+  before_action :set_item
   before_action :move_to_index
 
   def buy
