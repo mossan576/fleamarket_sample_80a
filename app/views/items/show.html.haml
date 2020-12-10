@@ -91,10 +91,11 @@
             = link_to "#" do
               = icon('fas', 'comment')
               コメントする
-      - if user_signed_in? && current_user.id == @item.user_id
-        .seller_function
-          = link_to '商品を編集する', edit_item_path(@item.id), class:"edit-item"
-          = link_to '商品を削除する', item_path, method: :delete, data: { confirm: '本当に削除しますか？' }, class: "delete-item"
+      -if @item.buyer_id.blank?
+        - if user_signed_in? && current_user.id == @item.user_id
+          .seller_function
+            = link_to '商品を編集する', edit_item_path(@item.id), class:"edit-item"
+            = link_to '商品を削除する', item_path, method: :delete, data: { confirm: '本当に削除しますか？' }, class: "delete-item"
     %ul.links 
       %li 
         = link_to "#", class:"link" do

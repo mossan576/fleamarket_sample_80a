@@ -45,8 +45,12 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    if user_signed_in? && current_user.id == @item.user_id
-      render :edit
+    if @item.buyer_id.blank?
+      if user_signed_in? && current_user.id == @item.user_id
+        render :edit
+      else
+        redirect_to root_path
+      end
     else
       redirect_to root_path
     end
