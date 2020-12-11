@@ -50,9 +50,9 @@
                 %br
                 .item_input__body__category#category_box
                   .pulldown#partent_box
-                    = f.select :category_id, options_for_select( @category_parent_array.map{|c| [c[:name], c[:id]]},@item.category.parent.parent.id), {}, { class: "parent_category_box", id: "parent_category"}
+                    = f.select :parent_id, options_for_select( @category_parent_array.map{|c| [c[:name], c[:id]]},@item.category.parent.parent.id), {}, { class: "parent_category_box", id: "parent_category"}
                   .pulldown.item_input__body__category__children#children_box
-                    = f.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'item_input__body__category__children--select', id: 'children_category'}
+                    = f.select :children_category, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'item_input__body__category__children--select', id: 'children_category'}
                   .pulldown.item_input__body__category__grandchildren#grandchildren_box
                     = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}),{}, {class: 'item_input__body__category__grandchildren--select', id: 'grandchildren_category', name:"item[category_id]"}
                 .sell-box__detail__size

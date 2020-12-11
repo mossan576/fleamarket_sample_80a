@@ -41,7 +41,7 @@
                 %br
                 .item_input__body__category#category_box
                   .pulldown#partent_box
-                    = f.select :category_id, options_for_select( @category_parent_array.map{|c| [c[:name], c[:id]]}),{include_blank: "選択してください"}, { class: "parent_category_box", id: "parent_category"}
+                    = f.select :parent_id, options_for_select( @category_parent_array.map{|c| [c[:name], c[:id]]}),{include_blank: "選択してください"}, { class: "parent_category_box", id: "parent_category"}
 
                   .pulldown.item_input__body__category__children#children_box
 

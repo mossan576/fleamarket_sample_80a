@@ -60,6 +60,7 @@ class ItemsController < ApplicationController
   end
 
   def update
+    @item.category_id = 'nil'
     edit_images
     if @item.images.length <= 10 && @item.images.length > 0
       if @item.update(update_params)
