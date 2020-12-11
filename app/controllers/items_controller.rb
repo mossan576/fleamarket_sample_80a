@@ -45,6 +45,13 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    grandchild_category = @item.category
+    child_category = grandchild_category.parent
+    parent_category = child_category.parent
+    @category_parent_array = Category.where(ancestry: parent_category.ancestry)
+    @category_children_array = Category.where(ancestry: child_category.ancestry)
+    @category_grandchildren_array = Category.where(ancestry: grandchild_category.ancestry)
+
     if user_signed_in? && current_user.id == @item.user_id
       render :edit
     else
