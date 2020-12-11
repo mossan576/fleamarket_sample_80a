@@ -29,7 +29,9 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @related_items = Item.find(params[:id])
+    # @related_items = Item.where(category_parent_array )
+    @related_items = Item.all
+    # @related_items = Item.find(params[:id])
     @category_id = @item.category_id
     @category_grandchild = Category.find(@category_id)
     @category_child = @category_grandchild.parent
@@ -51,7 +53,7 @@ class ItemsController < ApplicationController
     @category_parent_array = Category.where(ancestry: parent_category.ancestry)
     @category_children_array = Category.where(ancestry: child_category.ancestry)
     @category_grandchildren_array = Category.where(ancestry: grandchild_category.ancestry)
-    
+
     if @item.buyer_id.blank?
       if user_signed_in? && current_user.id == @item.user_id
         render :edit
