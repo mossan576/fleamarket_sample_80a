@@ -111,6 +111,7 @@
       = link_to item_path, class: "relatedItems_bar" do
         = @item.category.name
         をもっと見る
+      .relatedBox
         - @related_items.each do |item|
           = link_to item_path(item.id), class:"productList" do
             .relatedProduct

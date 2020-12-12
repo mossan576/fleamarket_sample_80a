@@ -255,7 +255,6 @@
         font-weight: bold;
         font-size: 22px;
         display: block;
-
       }
       .productList{
         margin: 0 10px;
@@ -311,4 +310,9 @@
     color: #fff;
     letter-spacing: 3px;
   }
+}
+
+.relatedBox {
+  display: flex;
+  justify-content: space-around;
 }
