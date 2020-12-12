@@ -29,8 +29,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-    # @related_items = Item.where(category_parent_array )
-    @related_items = Item.all
+    @related_items = Item.limit(5).where(category: @item.category_id).
+      where.not(id: @item.id).order("id DESC")
     # @related_items = Item.find(params[:id])
     @category_id = @item.category_id
     @category_grandchild = Category.find(@category_id)
@@ -60,8 +60,8 @@ class ItemsController < ApplicationController
       else
         redirect_to root_path
       end
-    else
-      redirect_to root_path
+    else 
+      redirect_to user_path(current_user.id), alert: '既に購入された商品です'
     end
   end
 
