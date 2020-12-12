@@ -22,7 +22,8 @@
           円
           .itemBox__price_detail
             %span (税込)
-            %span 送料込み
+            %span.show-freight
+              = @item.freight
         .itemDetail 
           = @item.description
         .table
@@ -91,7 +92,7 @@
             = link_to "#" do
               = icon('fas', 'comment')
               コメントする
-      - if user_signed_in? && current_user.id == @item.user_id
+      - if user_signed_in? && current_user.id == @item.user_id && @item.buyer_id.blank?
         .seller_function
           = link_to '商品を編集する', edit_item_path(@item.id), class:"edit-item"
           = link_to '商品を削除する', item_path, method: :delete, data: { confirm: '本当に削除しますか？' }, class: "delete-item"
@@ -110,23 +111,25 @@
       = link_to item_path, class: "relatedItems_bar" do
         = @item.category.name
         をもっと見る
-      = link_to item_path(@related_items.id), class:"productList" do
-        - @related_items.images.first(1).each do |image|
-          .relatedProduct
-            = image_tag @related_items.images.first, class:"productList_image"
-            -if @item.buyer_id.present?
-              = render "items/sold-label-S"
-            .productList_body
-              %h3.name 
-                = @related_items.name
-              .details
-                %ul 
-                  %li 
-                    = @related_items.price
-                    円
-                  %li 
-                    = icon('fas','star')
-                    = @item.favorites.count
-                (税込)
+      .relatedBox
+        - @related_items.each do |item|
+          = link_to item_path(item.id), class:"productList" do
+            .relatedProduct
+              - item.images.first(1).each do |image|
+                = image_tag image, class:"productList_image"
+                -if item.buyer_id.present?
+                  = render "items/sold-label-S"
+                .productList_body
+                  %h3.name 
+                    = item.name
+                  .details
+                    %ul 
+                      %li 
+                        = item.price
+                        円
+                      %li 
+                        = icon('fas','star')
+                        = item.favorites.count
+                    (税込)
   = render "items/footer"
   = render "items/putup-btn" 
