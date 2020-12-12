@@ -126,7 +126,7 @@
           %h3.title
             アーカイバ
       .newLists
-        - @items.where(brand: '近畿大学').each do |item|
+        - @items.where(brand: 'apple').each do |item|
           .newList
             = link_to item_path(item.id), class: "beef" do
               %figure.newList--image
