@@ -63,6 +63,9 @@ class ItemsController < ApplicationController
   def update
     @item.category_id = 'nil'
     edit_images
+    # binding.pry
+
+
     if @item.images.length <= 10 && @item.images.length > 0
       if @item.update(update_params)
         redirect_to item_path(@item.id), notice: '編集が完了しました'
@@ -107,8 +110,11 @@ class ItemsController < ApplicationController
   def delete_images
     if params[:item][:image_ids]
       params[:item][:image_ids].each do |image_id|
+        # binding.pry
         image = @item.images.find(image_id)
-        image.purge
+        image.update(params.permit("replace_image_#{image_id}":[]))
+        # image = @item.images.find(image_id)
+        # image.purge
       end
     end
   end
