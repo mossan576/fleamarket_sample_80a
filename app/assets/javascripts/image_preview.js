@@ -54,4 +54,15 @@ $(function(){
     $('#image-box__container').show()
     $('#image-box__container').attr('class', `item-num-${num}`)
   })
+
+  $(document).on("click", '.edit-btn', function(){
+    console.log(this)
+    const index = $(this).data("index");
+    $(`#item_replace_image_${index}`).trigger("click");
+  })
+  
+
+  $(document).on("change", `input[type="file"]`, function(e){
+    console.log(this)
+  })
 });

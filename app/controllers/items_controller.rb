@@ -64,7 +64,13 @@ class ItemsController < ApplicationController
     @item.category_id = 'nil'
     edit_images
     # binding.pry
-
+    
+    if params[:item][:replace_images]
+      params[:item][:replace_images].each do |image_id|
+        image = @item.images.find(image_id)
+        image.update(params.require(:item).permit(replace_image: []))
+      end
+    end
 
     if @item.images.length <= 10 && @item.images.length > 0
       if @item.update(update_params)
@@ -110,11 +116,8 @@ class ItemsController < ApplicationController
   def delete_images
     if params[:item][:image_ids]
       params[:item][:image_ids].each do |image_id|
-        # binding.pry
         image = @item.images.find(image_id)
-        image.update(params.permit("replace_image_#{image_id}":[]))
-        # image = @item.images.find(image_id)
-        # image.purge
+        image.purge
       end
     end
   end

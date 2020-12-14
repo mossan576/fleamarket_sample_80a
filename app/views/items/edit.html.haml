@@ -20,9 +20,8 @@
                       = image_tag image, class: "item-image-edit__content--icon", width: "114px", height: "76px"
                       = f.check_box :image_ids, {multiple: true}, image.id, false
                       %label.delete_check_box(for="item_image_ids_#{image.id}") 削除
-                      = f.label :"replace_image_#{image.id}", for: "item_replace_image_#{image.id}" do
-                        .edit-btn 編集
-                        = f.file_field :"replace_image_#{image.id}", id: "item_replace_image_#{image.id}"
+                      .edit-btn{data: {index: image.id}} 編集
+                      = f.file_field :replace_image, {data: {index: image.id}, id: "item_replace_image_#{image.id}"}
               #image-box-1
                 .item-num-0#image-box__container
                   .sell-box__upload
