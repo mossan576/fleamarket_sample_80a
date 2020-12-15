@@ -56,13 +56,25 @@ $(function(){
   })
 
   $(document).on("click", '.edit-btn', function(){
-    console.log(this)
+    // console.log(this)
     const index = $(this).data("index");
     $(`#item_replace_image_${index}`).trigger("click");
   })
   
 
   $(document).on("change", `input[type="file"]`, function(e){
-    console.log(this)
+    // console.log($(this).data("index"))
+    const index = $(this).data("index");
+    var file = this.files[0];
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function(){
+      var image = this.result;
+      $(`#preview_${index}`).attr('src', `${image}`);
+    }
+    // console.log()
+
   })
+
+
 });

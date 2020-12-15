@@ -17,7 +17,7 @@
                 - @item.images.each do |image|
                   .item-image-edit
                     .item-image-edit__content
-                      = image_tag image, class: "item-image-edit__content--icon", width: "114px", height: "76px"
+                      = image_tag image, class: "item-image-edit__content--icon", width: "114px", height: "76px", id: "preview_#{image.id}"
                       = f.check_box :image_ids, {multiple: true}, image.id, false
                       %label.delete_check_box(for="item_image_ids_#{image.id}") 削除
                       .edit-btn{data: {index: image.id}} 編集
