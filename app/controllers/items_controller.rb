@@ -63,15 +63,6 @@ class ItemsController < ApplicationController
   def update
     @item.category_id = 'nil'
     edit_images
-    # binding.pry
-    
-    if params[:item][:replace_images]
-      params[:item][:replace_images].each do |image_id|
-        image = @item.images.find(image_id)
-        image.update(params.require(:item).permit(replace_image: []))
-      end
-    end
-
     if @item.images.length <= 10 && @item.images.length > 0
       if @item.update(update_params)
         redirect_to item_path(@item.id), notice: '編集が完了しました'
@@ -120,11 +111,24 @@ class ItemsController < ApplicationController
         image.purge
       end
     end
+    
+    if params[:item][:replace_images]
+      params[:item][:replace_images].each do |image_id|
+        image = @item.images.find(image_id)
+        image.purge
+      end
+    end
   end
 
   def add_images
-    if (params[:item][:images]).presence
+    if (params[:item][:images])
       @item.images.attach(params[:item][:images])
+      
+    end
+    if params[:item][:replace_images]
+      params[:item][:replace_images].each do |num|
+        @item.images.attach(params[:item][:"replace_image_#{num}"])
+      end
     end
   end
 
