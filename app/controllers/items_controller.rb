@@ -121,10 +121,10 @@ class ItemsController < ApplicationController
   end
 
   def add_images
-    if (params[:item][:images])
+    if (params[:item][:images]).presence
       @item.images.attach(params[:item][:images])
-      
     end
+
     if params[:item][:replace_images]
       params[:item][:replace_images].each do |num|
         @item.images.attach(params[:item][:"replace_image_#{num}"])

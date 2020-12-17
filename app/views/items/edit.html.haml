@@ -22,7 +22,6 @@
                       %label.delete_check_box(for="item_image_ids_#{image.id}") 削除
                       = f.check_box :replace_images, {multiple: true}, image.id, false
                       %label.edit-btn{data: {index: image.id}} 編集
-                      = f.file_field :"replace_image_#{image.id}", {data: {index: image.id}, id: "item_replace_image_#{image.id}", style: "display: none;"}
               #image-box-1
                 .item-num-0#image-box__container
                   .sell-box__upload
@@ -30,6 +29,8 @@
                       = f.label :images ,class: "sell-box__upload__add-image" do
                         = icon('fas','camera', class: "camera-icon")
                         = f.file_field :images, multiple: true,type: 'file', value:"",class: "Hidden"
+                - @item.images.each do |image|
+                  = f.file_field :"replace_image_#{image.id}", {data: {index: image.id}, id: "item_replace_image_#{image.id}", style: "display: none;"}
             .sell-box__item
               .sell-box__item__title-area
               .sell-box__item__name
