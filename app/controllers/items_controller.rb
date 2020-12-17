@@ -111,11 +111,24 @@ class ItemsController < ApplicationController
         image.purge
       end
     end
+    
+    if params[:item][:replace_images]
+      params[:item][:replace_images].each do |image_id|
+        image = @item.images.find(image_id)
+        image.purge
+      end
+    end
   end
 
   def add_images
     if (params[:item][:images]).presence
       @item.images.attach(params[:item][:images])
+    end
+
+    if params[:item][:replace_images]
+      params[:item][:replace_images].each do |num|
+        @item.images.attach(params[:item][:"replace_image_#{num}"])
+      end
     end
   end
 

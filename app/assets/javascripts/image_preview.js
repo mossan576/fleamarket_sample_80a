@@ -54,4 +54,34 @@ $(function(){
     $('#image-box__container').show()
     $('#image-box__container').attr('class', `item-num-${num}`)
   })
+
+  $(document).on("click", '.edit-btn', function(){
+    const index = $(this).data("index");
+    $(`#item_replace_image_${index}`).trigger("click");
+  })
+  
+  $(document).on("change", `input[type="file"]`, function(e){
+    const index = $(this).data("index");
+    $(`#item_replace_images_${index}`).prop('checked', true);
+    $(`[data-index="${index}"]`).css({'background': '#31A9EE', 'color' : '#ffffff' })
+    if ($(`#item_image_ids_${index}`).prop('checked')){
+      $(`#item_image_ids_${index}`).prop('checked', false);
+    }
+    var file = this.files[0];
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function(){
+      var image = this.result;
+      $(`#preview_${index}`).attr('src', `${image}`);
+    };
+  });
+  
+  $(document).on("click", `input[type="checkbox"]`,function(e){
+    const value = $(this).val();
+    if ( $(`#item_replace_images_${value}`).prop('checked') ){
+      $(`#item_replace_images_${value}`).prop('checked', false);
+      $(`[data-index="${value}"]`).css({'background-color': '#ffffff', 'color' : 'blue' })
+    }
+  });
+
 });
