@@ -37,9 +37,10 @@ Things you may want to cover:
 |first_name_kana|string|null: false|
 |birthday|date|null: false|
 ### Association
- - has_many :items
- - has_one :credit_card
  - has_one :address
+ - has_one :credit_card
+ - has_many :favorites
+ - has_many :items
 
 ## addressesテーブル
 |Column|Type|Options|
@@ -82,22 +83,47 @@ Things you may want to cover:
 |user_id|references|null: false, foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
 ### Association
+ - has_many_attached :images
  - belongs_to :user
- - has_many :images
+ - has_many :favorites
  - belongs_to :category
 
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|ancestry|string||
+|ancestry|string|index: true|
 ### Association
  - has_many :items
 
-## imagesテーブル
+## favoritesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false|
-|item_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|
+### Association
+ - belongs_to :user
+ - belongs_to :item
+
+
+## active_storage_blobsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|key|string|null: false|
+|filename|string|null: false|
+|content_type|string||
+|metadata|text||
+|byte_size|bigint|null: false|
+|checksum|string|null: false|
+### Association
+ - has_many :attachments
+
+## active_storage_attachmentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|record|references|null: false, polymorphic: true, index: false|
+|blob|references|null: false, foreign_key: true|
 ### Association
  - belongs_to :item
+ - belongs_to :blob
